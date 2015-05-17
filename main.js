@@ -35,7 +35,7 @@ $(document).ready(function() {
     $('.button-download').click(function() {
         html2canvas(document.getElementsByClassName("preview")[0], {
             onrendered: function(canvas) {
-                Canvas2Image.saveAsPNG(canvas, 1024, 512);
+                Canvas2Image.saveAsPNG(canvas, $(".preview").width(), $(".preview").height());
             }
         });
     });
