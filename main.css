@@ -8,10 +8,11 @@
 
 .left-col{
 	width: 66.666%;
+	float: left;
 
 }
 
 .right-col{
 	width: 33.333%;
-
+	float: left;
 }
