@@ -1,6 +1,5 @@
 $(document).ready(function() {
     function readURL(input, option) {
-        // document.getElementById("bannerImg").style.display = "block";
 
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -14,12 +13,6 @@ $(document).ready(function() {
         }
     }
 
-    //.change function on readURL
-    // input-image
-    // input-logo
-
-
-
     $('input[name=img]').change(function() {
         var x = document.getElementsByClassName("input-image");
         readURL(x[0], "img");
@@ -28,5 +21,14 @@ $(document).ready(function() {
     $('input[name=logo]').change(function() {
         var y = document.getElementsByClassName("input-logo");
         readURL(y[0], "logo");
+    });
+
+    // onchange for text input
+    // put value from that into div preview-text
+    // preview.val - select div with jquery and do .text as a string
+    $('textarea[name=text]').keyup(function(){
+        var t = $(this).val();
+        $(".preview-text").text(t);
+        console.log(t);
     });
 });
