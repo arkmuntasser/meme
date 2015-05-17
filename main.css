@@ -139,15 +139,15 @@ h1 {
 }
 
 .radio-red {
-	background-color: #ff0000;
+	background-color: #c0392b;
 }
 
 .radio-green  {
-	background-color: #00ff00;
+	background-color: #2ecc71;
 }
 
 .radio-blue {
-	background-color: #0000ff;
+	background-color: #2980b9;
 }
 
 .download-wrapper {
