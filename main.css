@@ -5,6 +5,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, label, input, textarea, * {
 	font-size: 14px;
  	line-height: 20px;
 	color: #333;
+	text-rendering: optimizeLegibility;
 }
 h1 { font-size: 36px; line-height: 42px; }
 
@@ -87,12 +88,13 @@ h1 { font-size: 36px; line-height: 42px; }
 	line-height: 20px;
 	color: #333;
 }
-.input-image { padding-top: 10px; padding-bottom: 10px; }
-.input-logo { padding-top: 5px; padding-bottom: 10px; }
-.radios, .content-editor-label {
+.input-image,
+.input-logo { display: inline-flex; padding-top: 10px; padding-bottom: 10px; }
+.content-editor-label {
 	display: block;
 	padding: 10px;
 	margin-bottom: 15px;
+	border-radius: 4px;
 	width: 100%;
 	font-size: 12px;
 	line-height: 18px;
@@ -101,9 +103,11 @@ h1 { font-size: 36px; line-height: 42px; }
 	text-transform: uppercase;
 	background-color: whitesmoke;
 }
+.radios { margin-top: 10px; }
 .input-radio {
 	-webkit-appearance: none;
 	position: relative;
+	margin: 0;
 	border: 1px #ccc solid;
 	border-radius: 4px;
 	height: 30px;
