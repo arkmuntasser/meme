@@ -32,8 +32,13 @@ $(document).ready(function() {
         console.log(t);
     });
 
-    // download-button
-    // use html2canvas to get a canvas object
+    $('.button-download').click(function() {
+        html2canvas(document.getElementsByClassName("preview")[0], {
+            onrendered: function(canvas) {
+                Canvas2Image.saveAsPNG(canvas, 1024, 512);
+            }
+        });
+    });
 
     $('input[name=overlay]').change(function() {
         var color = $('input[name=overlay]:checked').val();
