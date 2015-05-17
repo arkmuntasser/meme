@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Meme</title>
+	
+	<style>
+		.preview {
+			border: 1px #000 solid;
+			border-radius: 4px;
+			width: 800px;
+			height: 350px;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+	</style>
+	
+</head>
+<body>
+	
+	<form>
+		<input type='file' id="uploadBannerImage" onchange="readURL(this);" /><br><br>
+	</form>
+	<hr>
+	<div class="preview"></div>
+	
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>		
+		function readURL(input) {
+			document.getElementById("bannerImg").style.display = "block";
+		
+			if (input.files && input.files[0]) {
+				var reader = new FileReader();
+		
+				reader.onload = function (e) {
+					$(".preview").attr("style", "background-image: url(" + e.target.result + ")");
+					console.log(e.target.result);
+				}
+		
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+	</script>
+	
+</body>
+</html>
