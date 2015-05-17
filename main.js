@@ -23,12 +23,19 @@ $(document).ready(function() {
         readURL(y[0], "logo");
     });
 
-    // onchange for text input
-    // put value from that into div preview-text
-    // preview.val - select div with jquery and do .text as a string
     $('textarea[name=text]').keyup(function(){
         var t = $(this).val();
         $(".preview-text").text(t);
         console.log(t);
     });
+
+    // download-button
+    // use html2canvas to get a canvas object
+
+    $('input[name=overlay]').change(function(){
+        var color = $('input[name=overlay]:checked').val();
+        $(".preview-overlay").attr("style", "background-color:" + color);
+        console.log(color);
+    });
+
 });
