@@ -16,10 +16,16 @@
 				</div>
 			</div>
 			<div class="right-col">
-				<form class="">
-					<textarea class="input-text" name="text"></textarea>
-					<input class="input-image" type='file' name="img" />
-					<input class="input-logo" type='file' name="logo" />
+				<form class="content-editor">
+					<textarea class="content-editor-input input-text" name="text"></textarea>
+					<input class="content-editor-input input-image" type='file' name="img" />
+					<input class="content-editor-input input-logo" type='file' name="logo" />
+					<div class="radios">
+						<input class="content-editor-input input-radio radio-transparent" name="overlay" type="radio" value="transparent">
+						<input class="content-editor-input input-radio radio-red" name="overlay" type="radio" value="#ff0000">
+						<input class="content-editor-input input-radio radio-green" name="overlay" type="radio" value="#00ff00">
+						<input class="content-editor-input input-radio radio-blue" name="overlay" type="radio" value="#0000ff">
+					</div>
 				</form>
 			</div>
 		</div>
