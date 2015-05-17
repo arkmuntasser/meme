@@ -6,9 +6,14 @@
 	background-repeat: no-repeat;
 }
 
+.clearfix:after {
+	clear: both;
+}
+
 .left-col{
 	width: 66.666%;
 	float: left;
+	padding: 0 20px;
 
 }
 
