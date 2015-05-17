@@ -2,6 +2,17 @@ div, input, textarea {
 	box-sizing: border-box;
 }
 
+h1 {
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	line-height: 42px;
+	color: #333;
+}
+
+.title {
+	padding: 0 20px;
+}
+
 .container {
 	width: 100%;
 	max-width: 1100px;
@@ -27,7 +38,7 @@ div, input, textarea {
 	height: 50px;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: auto 100%;
+	background-size: 100%;
 }
 
 .preview-text {
@@ -117,22 +128,26 @@ div, input, textarea {
 	margin-left: 13px;
 }
 
+.input-radio.radio-transparent:checked:before{
+	color: #333;
+}
+
 
 
 .input-radio:checked, .input-radio:focus, .input-radio:active{
-	outline-color: #000;
+	outline: none;
 }
 
 .radio-red {
-	background-color: #ff0000;
+	background-color: #c0392b;
 }
 
 .radio-green  {
-	background-color: #00ff00;
+	background-color: #2ecc71;
 }
 
 .radio-blue {
-	background-color: #0000ff;
+	background-color: #2980b9;
 }
 
 .download-wrapper {
