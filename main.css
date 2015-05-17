@@ -128,10 +128,14 @@ h1 {
 	margin-left: 13px;
 }
 
+.input-radio.radio-transparent:checked:before{
+	color: #333;
+}
+
 
 
 .input-radio:checked, .input-radio:focus, .input-radio:active{
-	outline-color: #000;
+	outline: none;
 }
 
 .radio-red {
