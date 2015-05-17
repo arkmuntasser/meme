@@ -5,10 +5,13 @@ $(document).ready(function() {
             var reader = new FileReader();
 
             reader.onload = function(e) {
-                $(".preview").attr("style", "background-image: url(" + e.target.result + ")");
+                if (option == "img") {
+                    $(".preview").attr("style", "background-image: url(" + e.target.result + ")");
+                } else if (option == "logo") {
+                    $(".preview-logo").attr("style", "background-image: url(" + e.target.result + ")");
+                }
                 console.log(e.target.result);
             }
-
             reader.readAsDataURL(input.files[0]);
         }
     }
@@ -23,7 +26,7 @@ $(document).ready(function() {
         readURL(y[0], "logo");
     });
 
-    $('textarea[name=text]').keyup(function(){
+    $('textarea[name=text]').keyup(function() {
         var t = $(this).val();
         $(".preview-text").text(t);
         console.log(t);
@@ -32,7 +35,7 @@ $(document).ready(function() {
     // download-button
     // use html2canvas to get a canvas object
 
-    $('input[name=overlay]').change(function(){
+    $('input[name=overlay]').change(function() {
         var color = $('input[name=overlay]:checked').val();
         $(".preview-overlay").attr("style", "background-color:" + color);
         console.log(color);
