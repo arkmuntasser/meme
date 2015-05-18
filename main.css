@@ -8,6 +8,10 @@ html, body, h1, h2, h3, h4, h5, h6, p, label, input, textarea, * {
 	text-rendering: optimizeLegibility;
 }
 h1 { font-size: 36px; line-height: 42px; }
+canvas {
+	max-width: 100% !important;
+	background-color: #ccc;
+}
 
 /* Helpers */
 .container {
@@ -57,10 +61,7 @@ h1 { font-size: 36px; line-height: 42px; }
 	bottom: 20px;
 	right: 25px;
 	width: 200px;
-	height: 50px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 100%;
+	height: auto;
 }
 .preview-text {
 	position: absolute;
@@ -69,8 +70,8 @@ h1 { font-size: 36px; line-height: 42px; }
 	padding: 20px 25px;
 	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
-	font-size: 50px;
-	line-height: 56px;
+	font-size: 42px;
+	line-height: 48px;
 	font-weight: 600;
 	color: #fff;
 }
@@ -138,6 +139,7 @@ h1 { font-size: 36px; line-height: 42px; }
 	font-size: 14px;
 	line-height: 20px;
 	color: #fff;
+	text-decoration: none;
 	background-color: #e63e4c;
 	cursor: pointer;
 }
