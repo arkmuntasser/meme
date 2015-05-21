@@ -14,6 +14,9 @@
 		<div class="clearfix">
 			<div class="left-col">
 				<canvas id="canvas" width="1024" height="512"></canvas>
+				<div class="download-wrapper">
+					<a download="Canvas.png" class="button-download">Download Image</a>
+				</div>
 			</div>
 			<div class="right-col">
 				<form class="content-editor">
@@ -31,7 +34,9 @@
 					<label class="content-editor-label" for="overlay">
 						Background overlay color:<br>
 						<div class="radios">
-							<input class="content-editor-input input-radio radio-transparent" name="overlay" type="radio" value="transparent" checked="checked">
+							<label>
+								<input class="content-editor-input radio-transparent" name="overlay" type="radio" value="transparent" checked="checked"> None
+							</label>
 							<input class="content-editor-input input-radio radio-red" name="overlay" type="radio" value="#c0392b">
 							<input class="content-editor-input input-radio radio-green" name="overlay" type="radio" value="#2ecc71">
 							<input class="content-editor-input input-radio radio-blue" name="overlay" type="radio" value="#2980b9">
@@ -49,9 +54,6 @@
 					</label>
 				</form>
 			</div>
-		</div>
-		<div class="download-wrapper">
-			<a download="Canvas.png" class="button-download">Download Image</a>
 		</div>
 	</div>
 
