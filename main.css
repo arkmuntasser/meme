@@ -39,13 +39,13 @@ canvas {
 /* Preview */
 .preview {
 	position: relative;
-	padding: 20px 25px; 
+	padding: 20px 25px;
 	width: 100%;
 	height: 400px;
 	background-color: #ccc;
 	background-position: center;
 	background-size: cover;
-	background-repeat: no-repeat;	
+	background-repeat: no-repeat;
 }
 .preview-overlay {
 	position: absolute;
@@ -89,8 +89,38 @@ canvas {
 	line-height: 20px;
 	color: #333;
 }
+.file-upload {
+	position: relative;
+  width: 100%;
+  height: 50px;
+	margin-top: 10px;
+}
+.file-upload > span {
+	display: block;
+	border: 1px dashed #999;
+	border-radius: 4px;
+	height: 100%;
+  width: 100%;
+	font-size: 12px;
+  line-height: 50px;
+	color: #999;
+	text-align: center;
+  background-color: #fff;
+}
+.file-upload:hover > span { background-color: #f3f3f3; }
 .input-image,
-.input-logo { display: inline-flex; padding-top: 10px; padding-bottom: 10px; }
+.input-logo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	z-index: 1;
+	opacity: 0;
+	cursor: pointer;
+}
+
 .content-editor-label {
 	display: block;
 	padding: 10px;

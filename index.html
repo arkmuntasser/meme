@@ -19,12 +19,15 @@
 				<form class="content-editor">
 					<label class="content-editor-label" for="img">
 						Background image:<br>
-						<input class="content-editor-input input-image" type='file' name="img" />
-						<input name="imgstr" type="hidden" value="">
+						<div class="file-upload">
+							<span>Click or drag image</span>
+							<input class="content-editor-input input-image" type='file' name="img" />
+							<input name="imgstr" type="hidden" value="">
+						</div>
 					</label>
-					
+
 					<textarea class="content-editor-input input-text" name="text">Add your text here...</textarea>
-					
+
 					<label class="content-editor-label" for="overlay">
 						Background overlay color:<br>
 						<div class="radios">
@@ -32,14 +35,17 @@
 							<input class="content-editor-input input-radio radio-red" name="overlay" type="radio" value="#c0392b">
 							<input class="content-editor-input input-radio radio-green" name="overlay" type="radio" value="#2ecc71">
 							<input class="content-editor-input input-radio radio-blue" name="overlay" type="radio" value="#2980b9">
-							<input name="colorstr" type="hidden" value="">
+							<input name="colorstr" type="hidden" value="transparent">
 						</div>
 					</label>
-					
+
 					<label class="content-editor-label" for="logo">
 						Logo image:<br>
-						<input class="content-editor-input input-logo" type='file' name="logo" />
-						<input name="logostr" type="hidden" value="transparent">
+						<div class="file-upload">
+							<span>Click or drag image</span>
+							<input class="content-editor-input input-logo" type='file' name="logo" />
+							<input name="logostr" type="hidden" value="">
+						</div>
 					</label>
 				</form>
 			</div>
@@ -48,7 +54,7 @@
 			<a download="Canvas.png" class="button-download">Download Image</a>
 		</div>
 	</div>
-	
+
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="main.js" type="text/javascript"></script>
 </body>
