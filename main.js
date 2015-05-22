@@ -5,6 +5,8 @@ $(document).ready(function() {
     var width = 1024;
     var height = 512;
     var opacity = 0.5;
+    var textAlign = "left";
+    var position = "top";
     ctx.clearRect(0, 0, width, height);
     ctx.fillStyle = "#ffffff";
     ctx.font = 'bold 52px Helvetica Neue, Helvetica, Arial, sans-serif';
@@ -187,19 +189,34 @@ $(document).ready(function() {
         var words = text.split(' ');
         var line = '';
 
+        if(textAlign == "right") {
+          x = width - 35;
+        } else if(textAlign == "center") {
+          x = width / 2;
+        }
+        context.textAlign = textAlign;
+
+        if(position == "middle") {
+          y = height / 2;
+        } else if(position == "bottom") {
+          y = height - 100;
+        }
+
         for(var n = 0; n < words.length; n++) {
             var testLine = line + words[n] + ' ';
             var metrics = context.measureText(testLine);
             var testWidth = metrics.width;
             if (testWidth > maxWidth && n > 0) {
-                context.fillText(line, x, y);
-                line = words[n] + ' ';
-                y += lineHeight;
+
+              context.fillText(line, x, y);
+              line = words[n] + ' ';
+              y += lineHeight;
             }
             else {
-                line = testLine;
+              line = testLine;
             }
         }
+
         context.fillText(line, x, y);
     }
 
@@ -234,6 +251,16 @@ $(document).ready(function() {
       }
       c.width = width;
       c.height = height;
+      updateCanvas();
+    });
+
+    $('select[name=textHAlign]').change(function() {
+      textAlign = $(this).val();
+      updateCanvas();
+    });
+
+    $('select[name=textVAlign]').change(function() {
+      position = $(this).val();
       updateCanvas();
     });
 
