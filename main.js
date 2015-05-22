@@ -4,6 +4,7 @@ $(document).ready(function() {
     var ctx = c.getContext("2d");
     var width = 1024;
     var height = 512;
+    var opacity = 0.5;
     ctx.clearRect(0, 0, width, height);
     ctx.fillStyle = "#ffffff";
     ctx.font = 'bold 52px Helvetica Neue, Helvetica, Arial, sans-serif';
@@ -28,7 +29,7 @@ $(document).ready(function() {
                 // overlay
                 var color = $("input[name=colorstr]").val();
                 if(typeof color != 'undefined' && color != "") {
-                    ctx.globalAlpha = 0.5;
+                    ctx.globalAlpha = opacity;
                     ctx.beginPath();
                     ctx.rect(0, 0, width, height);
                     ctx.fillStyle = color;
@@ -70,7 +71,7 @@ $(document).ready(function() {
                 // overlay
                 var color = $("input[name=colorstr]").val();
                 if(typeof color != 'undefined' && color != "") {
-                    ctx.globalAlpha = 0.5;
+                    ctx.globalAlpha = opacity;
                     ctx.beginPath();
                     ctx.rect(0, 0, width, height);
                     ctx.fillStyle = color;
@@ -101,7 +102,7 @@ $(document).ready(function() {
                 // overlay
                 var color = $("input[name=colorstr]").val();
                 if(typeof color != 'undefined' && color != "") {
-                    ctx.globalAlpha = 0.5;
+                    ctx.globalAlpha = opacity;
                     ctx.beginPath();
                     ctx.rect(0, 0, width, height);
                     ctx.fillStyle = color;
@@ -233,6 +234,11 @@ $(document).ready(function() {
       }
       c.width = width;
       c.height = height;
+      updateCanvas();
+    });
+
+    $('input[name=opacity]').change(function() {
+      opacity = $(this).val();
       updateCanvas();
     });
 

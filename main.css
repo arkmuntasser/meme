@@ -77,7 +77,7 @@ canvas {
 }
 
 /* Inputs */
-.content-editor-select {
+.select-ratio, .input-range {
 	margin-top: 10px;
 	width: 100%;
 }
