@@ -2,14 +2,14 @@ $(document).ready(function() {
     var text = $('textarea[name=text]').val();
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
-    ctx.clearRect(0, 0, 1024, 512);
+    var width = 1024;
+    var height = 512;
+    ctx.clearRect(0, 0, width, height);
     ctx.fillStyle = "#ffffff";
     ctx.font = 'bold 52px Helvetica Neue, Helvetica, Arial, sans-serif';
     wrapText(ctx, text.toUpperCase(), 35, 82, 974, 58);
 
     function updateCanvas() {
-        var c = document.getElementById("canvas");
-        var ctx = c.getContext("2d");
         var imgsrc = $("input[name=imgstr]").val();
         if(typeof imgsrc != 'undefined' && imgsrc != "") {
             var img = new Image();
@@ -18,19 +18,19 @@ $(document).ready(function() {
                 // clear
                 ctx.globalAlpha = 1;
                 ctx.beginPath();
-                ctx.rect(0, 0, 1024, 512);
+                ctx.rect(0, 0, width, height);
                 ctx.fillStyle = '#ccc';
                 ctx.fill();
 
                 // background image
-                drawImageProp(ctx, img, 0, 0, 1024, 512);
+                drawImageProp(ctx, img, 0, 0, width, height);
 
                 // overlay
                 var color = $("input[name=colorstr]").val();
                 if(typeof color != 'undefined' && color != "") {
                     ctx.globalAlpha = 0.5;
                     ctx.beginPath();
-                    ctx.rect(0, 0, 1024, 512);
+                    ctx.rect(0, 0, width, height);
                     ctx.fillStyle = color;
                     ctx.fill();
                     ctx.globalAlpha = 1;
@@ -40,7 +40,7 @@ $(document).ready(function() {
                 var text = $('textarea[name=text]').val();
                 ctx.fillStyle = "#ffffff";
                 ctx.font = 'bold 52px Helvetica Neue, Helvetica, Arial, sans-serif';
-                wrapText(ctx, text.toUpperCase(), 35, 82, 974, 58);
+                wrapText(ctx, text.toUpperCase(), 35, 82, width - 50, 58);
 
                 // logo
                 var logosrc = $("input[name=logostr]").val();
@@ -51,8 +51,8 @@ $(document).ready(function() {
                         //var ratio = 350 / logo.width;
                         //var iw = 350;
                         //var ih = ratio * logo.height;
-                        var x = 1024 - 50 - logo.width;
-                        var y = 512 - 40 - logo.height;
+                        var x = width - 50 - logo.width;
+                        var y = height - 40 - logo.height;
                         ctx.drawImage(logo, x, y, logo.width, logo.height);
                     }
                 }
@@ -63,7 +63,7 @@ $(document).ready(function() {
                 // clear
                 ctx.globalAlpha = 1;
                 ctx.beginPath();
-                ctx.rect(0, 0, 1024, 512);
+                ctx.rect(0, 0, width, height);
                 ctx.fillStyle = '#ccc';
                 ctx.fill();
 
@@ -72,7 +72,7 @@ $(document).ready(function() {
                 if(typeof color != 'undefined' && color != "") {
                     ctx.globalAlpha = 0.5;
                     ctx.beginPath();
-                    ctx.rect(0, 0, 1024, 512);
+                    ctx.rect(0, 0, width, height);
                     ctx.fillStyle = color;
                     ctx.fill();
                     ctx.globalAlpha = 1;
@@ -82,7 +82,7 @@ $(document).ready(function() {
                 var text = $('textarea[name=text]').val();
                 ctx.fillStyle = "#ffffff";
                 ctx.font = 'bold 52px Helvetica Neue, Helvetica, Arial, sans-serif';
-                wrapText(ctx, text.toUpperCase(), 35, 82, 974, 58);
+                wrapText(ctx, text.toUpperCase(), 35, 82, width - 50, 58);
 
                 // logo
                 var logo = new Image();
@@ -91,19 +91,19 @@ $(document).ready(function() {
                     //var ratio = 350 / logo.width;
                     //var iw = 350;
                     //var ih = ratio * logo.height;
-                    var x = 1024 - 50 - logo.width;
-                    var y = 512 - 40 - logo.height;
+                    var x = width - 50 - logo.width;
+                    var y = height - 40 - logo.height;
                     ctx.drawImage(logo, x, y, logo.width, logo.height);
                 }
             } else {
-                ctx.clearRect(0, 0, 1024, 512);
+                ctx.clearRect(0, 0, width, height);
 
                 // overlay
                 var color = $("input[name=colorstr]").val();
                 if(typeof color != 'undefined' && color != "") {
                     ctx.globalAlpha = 0.5;
                     ctx.beginPath();
-                    ctx.rect(0, 0, 1024, 512);
+                    ctx.rect(0, 0, width, height);
                     ctx.fillStyle = color;
                     ctx.fill();
                     ctx.globalAlpha = 1;
@@ -113,7 +113,7 @@ $(document).ready(function() {
                 var text = $('textarea[name=text]').val();
                 ctx.fillStyle = "#ffffff";
                 ctx.font = 'bold 52px Helvetica Neue, Helvetica, Arial, sans-serif';
-                wrapText(ctx, text.toUpperCase(), 35, 82, 974, 58);
+                wrapText(ctx, text.toUpperCase(), 35, 82, width - 50, 58);
             }
         }
     }
@@ -222,9 +222,22 @@ $(document).ready(function() {
         updateCanvas();
     });
 
+    $('select[name=ratio]').change(function() {
+      var ratio = $(this).val();
+      if(ratio == 0) {
+        width = 1024;
+        height = 512;
+      } else {
+        width = 600;
+        height = 600;
+      }
+      c.width = width;
+      c.height = height;
+      updateCanvas();
+    });
+
     function dlCanvas() {
-        var c = document.getElementById("canvas");
-        var dt = canvas.toDataURL('image/png');
+        var dt = c.toDataURL('image/png');
 
         dt = dt.replace(/^data:image\/[^;]*/, 'data:application/octet-stream');
         dt = dt.replace(/^data:application\/octet-stream/, 'data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=meme.png');

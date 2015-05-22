@@ -77,6 +77,10 @@ canvas {
 }
 
 /* Inputs */
+.content-editor-select {
+	margin-top: 10px;
+	width: 100%;
+}
 .input-text {
 	margin-bottom: 15px;
 	padding: 10px;
