@@ -174,8 +174,12 @@ canvas {
 .input-radio.radio-transparent:checked:before { color: #333; }
 .input-radio:checked, .input-radio:focus, .input-radio:active { outline: none; }
 .radio-red { margin-left: 5px; background-color: #c0392b; }
+.radio-orange { background-color: #e67e22; }
+.radio-yellow { background-color: #f1c40f; }
 .radio-green  { background-color: #2ecc71; }
 .radio-blue { background-color: #2980b9; }
+.radio-purple { background-color: #8e44ad; }
+.radio-black { background-color: #000000; }
 
 /* Download button */
 .download-wrapper { padding: 10px 0; }
