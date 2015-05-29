@@ -28,7 +28,7 @@ a {
 .container {
 	width: 100%;
 	max-width: 1100px;
-	margin: 0 auto;
+	margin: 50px auto;
 }
 .fix > div.clearfix {
   margin-top: 267px;
@@ -254,6 +254,11 @@ a {
 }
 .button-download:hover { background-color: #cc3744; }
 
+footer {
+	position: fixed;
+	bottom: 0;
+}
+
 .footer-inner {
   padding: 0 20px;
   width: 100%;
@@ -284,6 +289,9 @@ a {
 		padding: 0 20px;
 		width: 100%;
 	}
+
+	.container { margin: 0 auto; }
+	footer { position: relative; bottom: initial; }
 
   .select-align { float: none; width: 100%; }
   .select-align:first-of-type { margin-right: 0; }
