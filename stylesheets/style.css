@@ -83,7 +83,7 @@ img { display: block; max-width: 100%; }
 .select-align {
 	float: left;
 	margin-top: 10px;
-	width: 49%%;
+	width: 49%;
 }
 .select-align:first-of-type {
 	margin-right: 2%;
@@ -223,6 +223,9 @@ img { display: block; max-width: 100%; }
 		padding: 0 20px;
 		width: 100%;
 	}
+
+  .select-align { float: none; width: 100%; }
+  .select-align:first-of-type { margin-right: 0; }
 
 	.button-download { width: 100%; }
 }
