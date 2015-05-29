@@ -39,6 +39,6 @@ $(document).ready(function() {
   function isPortait() {
     var w = $(window).width();
     var h = $(window).height();
-    return w > h;
+    return h > w;
   }
 });
