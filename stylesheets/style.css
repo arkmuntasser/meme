@@ -15,6 +15,12 @@ canvas {
 	background-color: #ccc;
 }
 img { display: block; max-width: 100%; }
+a {
+  font-size: inherit;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+}
 
 /* Helpers */
 .desktop { display: block !important; }
@@ -230,6 +236,21 @@ img { display: block; max-width: 100%; }
 	cursor: pointer;
 }
 .button-download:hover { background-color: #cc3744; }
+
+.footer-inner {
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  background-color: #ef9a9a;
+}
+
+.footer-inner small {
+  font-size: 12px;
+  line-height: 50px;
+  font-weight: 200;
+  color: #fff;
+}
 
 @media only screen and (max-width: 767px) {
 	.desktop { display: none !important; }
