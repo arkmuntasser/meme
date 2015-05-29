@@ -3,11 +3,11 @@ $(document).ready(function() {
     'touchmove': function(e) {
       var position = $(this).scrollTop();
       if(position >= 65) {
-        if(!$(".container").hasClass("fix")) {
+        if(isPortait() && !$(".container").hasClass("fix")) {
           $(".container").addClass("fix");
         }
       } else {
-        if($(".container").hasClass("fix")) {
+        if(isPortait() && $(".container").hasClass("fix")) {
           $(".container").removeClass("fix");
         }
       }
@@ -17,11 +17,11 @@ $(document).ready(function() {
   $(window).scroll(function() {
     var position = $(this).scrollTop();
     if(position >= 65) {
-      if($(this).width() <= 767 && !$(".container").hasClass("fix")) {
+      if($(this).width() <= 767 && isPortait() && !$(".container").hasClass("fix")) {
         $(".container").addClass("fix");
       }
     } else {
-      if($(this).width() <= 767 && $(".container").hasClass("fix")) {
+      if($(this).width() <= 767 && isPortait() && $(".container").hasClass("fix")) {
         $(".container").removeClass("fix");
       }
     }
@@ -35,4 +35,10 @@ $(document).ready(function() {
   $(function() {
       FastClick.attach(document.body);
   });
+
+  function isPortait() {
+    var w = $(window).width();
+    var h = $(window).height();
+    return w > h;
+  }
 });
