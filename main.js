@@ -13,6 +13,7 @@ $(document).ready(function() {
   });
 
   $(".close").click(function() {
-    $(this).parent().remove();
+    $(this).parent().toggle();
+    $(this).parent().find("img").remove();
   });
 });
