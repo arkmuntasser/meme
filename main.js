@@ -7,7 +7,12 @@ $(document).ready(function() {
     var opacity = 0.5;
     var textAlign = "left";
     var position = "top";
-    ctx.clearRect(0, 0, width, height);
+    // clear
+    ctx.globalAlpha = 1;
+    ctx.beginPath();
+    ctx.rect(0, 0, width, height);
+    ctx.fillStyle = '#ccc';
+    ctx.fill();
     ctx.fillStyle = "#ffffff";
     ctx.font = 'bold 52px Helvetica Neue, Helvetica, Arial, sans-serif';
     wrapText(ctx, text.toUpperCase(), 35, 82, 974, 58);
@@ -278,7 +283,8 @@ $(document).ready(function() {
 
           this.href = dt;
         } else {
-          document.write('<img src="' + dt + '"/>');
+          $(".mobile-download-area").append('<img src="' + dt + '"/>');
+          $(".mobile-download-area").toggle();
         }
     };
 

@@ -12,6 +12,7 @@ canvas {
 	max-width: 100% !important;
 	background-color: #ccc;
 }
+img { display: block; max-width: 100%; }
 
 /* Helpers */
 .desktop { display: block; }
@@ -136,7 +137,8 @@ canvas {
 	cursor: pointer;
 }
 
-.content-editor-label {
+.content-editor-label,
+.mobile-download-area  {
 	display: block;
 	padding: 10px;
 	margin-bottom: 15px;
@@ -149,6 +151,8 @@ canvas {
 	text-transform: uppercase;
 	background-color: whitesmoke;
 }
+.mobile-download-area { display: none; }
+.mobile-download-area img { margin-top: 10px; }
 .radios { margin-top: 10px; }
 .radios label {
 	vertical-align: top;
