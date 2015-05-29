@@ -16,4 +16,8 @@ $(document).ready(function() {
     $(this).parent().toggle();
     $(this).parent().find("img").remove();
   });
+
+  $(function() {
+      FastClick.attach(document.body);
+  });
 });
