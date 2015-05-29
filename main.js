@@ -35,5 +35,9 @@ $(document).ready(function() {
         $(".container").removeClass("fix");
       }
     }
+
+    if(!isPortait()) {
+      $(".container").removeClass("fix");
+    }
   }
 });
