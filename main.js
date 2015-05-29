@@ -40,4 +40,8 @@ $(document).ready(function() {
       $(".container").removeClass("fix");
     }
   }
+
+  window.addEventListener("orientationchange", function() {
+      affixPane();
+  }, false);
 });
