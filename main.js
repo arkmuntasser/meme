@@ -1,30 +1,12 @@
 $(document).ready(function() {
   $('body').on({
     'touchmove': function(e) {
-      var position = $(this).scrollTop();
-      if(position >= 65) {
-        if(isPortait() && !$(".container").hasClass("fix")) {
-          $(".container").addClass("fix");
-        }
-      } else {
-        if(isPortait() && $(".container").hasClass("fix")) {
-          $(".container").removeClass("fix");
-        }
-      }
+      affixPane();
     }
   });
 
   $(window).scroll(function() {
-    var position = $(this).scrollTop();
-    if(position >= 65) {
-      if($(this).width() <= 767 && isPortait() && !$(".container").hasClass("fix")) {
-        $(".container").addClass("fix");
-      }
-    } else {
-      if($(this).width() <= 767 && isPortait() && $(".container").hasClass("fix")) {
-        $(".container").removeClass("fix");
-      }
-    }
+    affixPane();
   });
 
   $(".close").click(function() {
@@ -40,5 +22,18 @@ $(document).ready(function() {
     var w = $(window).width();
     var h = $(window).height();
     return h > w;
+  }
+
+  function affixPane() {
+    var position = $(this).scrollTop();
+    if(position >= 65) {
+      if($(this).width() <= 767 && isPortait() && !$(".container").hasClass("fix")) {
+        $(".container").addClass("fix");
+      }
+    } else {
+      if($(this).width() <= 767 && isPortait() && $(".container").hasClass("fix")) {
+        $(".container").removeClass("fix");
+      }
+    }
   }
 });
