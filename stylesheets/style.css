@@ -17,8 +17,8 @@ canvas {
 img { display: block; max-width: 100%; }
 
 /* Helpers */
-.desktop { display: block; }
-.mobile { display: none; }
+.desktop { display: block !important; }
+.mobile { display: none !important; }
 .container {
 	width: 100%;
 	max-width: 1100px;
@@ -232,8 +232,8 @@ img { display: block; max-width: 100%; }
 .button-download:hover { background-color: #cc3744; }
 
 @media only screen and (max-width: 767px) {
-	.desktop { display: none; }
-  .mobile { display: block; }
+	.desktop { display: none !important; }
+  .mobile { display: block!important; }
   .left-col,
 	.right-col {
 		float: none;
