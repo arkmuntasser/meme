@@ -275,11 +275,9 @@ $(document).ready(function() {
         if($(window).width() > 767) {
           dt = dt.replace(/^data:image\/[^;]*/, 'data:application/octet-stream');
           dt = dt.replace(/^data:application\/octet-stream/, 'data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=meme.png');
-
-          this.href = dt;
-        } else {
-          document.write(dt);
         }
+
+        this.href = dt;
     };
 
     document.getElementsByClassName("button-download")[0].addEventListener('click', dlCanvas, false);
