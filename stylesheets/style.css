@@ -171,7 +171,8 @@ a {
 
 .content-editor-label,
 .mobile-download-area  {
-	display: block;
+	position: relative;
+  display: block;
 	padding: 10px;
 	margin-bottom: 15px;
 	border-radius: 4px;
@@ -182,6 +183,11 @@ a {
 	color: #666;
 	text-transform: uppercase;
 	background-color: whitesmoke;
+}
+.close {
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
 }
 .mobile-download-area { display: none; }
 .mobile-download-area img { margin-top: 10px; }
