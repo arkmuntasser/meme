@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  $(window).scroll(function() {
+  $('body').on({
+    'touchmove': function(e) {
     var position = $(this).scrollTop();
     if(position >= 65) {
       if(!$(".container").hasClass("fix")) {
@@ -10,7 +11,8 @@ $(document).ready(function() {
         $(".container").removeClass("fix");
       }
     }
-  });
+  }
+});
 
   $(".close").click(function() {
     $(this).parent().toggle();
