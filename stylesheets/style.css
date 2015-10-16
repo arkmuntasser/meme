@@ -202,9 +202,12 @@ a {
 }
 
 .close {
-  position: absolute;
+	position: absolute;
+	z-index: 1001;
   right: 10px;
-  font-size: 20px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
 }
 .mobile-download-area { display: none; }
 .mobile-download-area-img {
