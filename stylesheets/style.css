@@ -169,8 +169,7 @@ a {
 	cursor: pointer;
 }
 
-.content-editor-label,
-.mobile-download-area  {
+.content-editor-label {
 	position: relative;
   display: block;
 	padding: 10px;
@@ -184,13 +183,39 @@ a {
 	text-transform: uppercase;
 	background-color: whitesmoke;
 }
+
+.mobile-download-area  {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	display: block;
+	padding: 10px;
+	width: 100%;
+	height: 100%;
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: 600;
+	color: #fff;
+	text-transform: uppercase;
+	background-color: rgba(0,0,0,.8);
+}
+
 .close {
   position: absolute;
   right: 10px;
   font-size: 20px;
 }
 .mobile-download-area { display: none; }
-.mobile-download-area img { margin-top: 10px; }
+.mobile-download-area-img {
+	position: relative;
+	top: 50%;
+	color: #fff;
+	-webkit-transform: translate(0,-50%);
+		 -moz-transform: translate(0,-50%);
+		  -ms-transform: translate(0,-50%);
+				 transform: translate(0,-50%);
+}
 .radios { margin-top: 10px; }
 .radios label {
 	vertical-align: top;

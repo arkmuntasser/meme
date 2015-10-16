@@ -283,7 +283,7 @@ $(document).ready(function() {
 
           this.href = dt;
         } else {
-          $(".mobile-download-area").append('<img src="' + dt + '"/>');
+          $(".mobile-download-area-img").append('<img src="' + dt + '"/>');
           $(".mobile-download-area").toggle();
         }
     };
