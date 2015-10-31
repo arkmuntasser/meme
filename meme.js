@@ -257,6 +257,8 @@ $(document).ready(function() {
       c.width = width;
       c.height = height;
       updateCanvas();
+      $(".canvas").toggleClass("wide");
+      $(".canvas").toggleClass("tall");
     });
 
     $('select[name=textHAlign]').change(function() {
@@ -277,10 +279,12 @@ $(document).ready(function() {
     function dlCanvas() {
         var dt = c.toDataURL('image/png');
 
-        if($(window).width() > 767) {
+        if($("html").hasClass("no-touchevents")) {
           dt = dt.replace(/^data:image\/[^;]*/, 'data:application/octet-stream');
           dt = dt.replace(/^data:application\/octet-stream/, 'data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=meme.png');
 
+          var d = new Date();
+          this.download = this.download + "-" + d.getTime() + ".png";
           this.href = dt;
         } else {
           $(".mobile-download-area-img").append('<img src="' + dt + '"/>');
