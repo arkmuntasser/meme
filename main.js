@@ -9,10 +9,10 @@ $(document).ready(function() {
   };
 
   $(window).resize(function() {
-    $(".container").attr("style", "height: " + getIOSWindowHeight + "px;");
+    $(".container").attr("style", "height: " + getIOSWindowHeight() + "px;");
   });
 
-  $(".container").attr("style", "height: " + getIOSWindowHeight + "px;");
+  $(".container").attr("style", "height: " + getIOSWindowHeight() + "px;");
 
   $(".close").click(function() {
     $(this).parent().toggle();
