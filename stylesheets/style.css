@@ -32,6 +32,9 @@ a {
 	text-decoration: none;
 }
 
+small { font-size: 80%; }
+small > * { font-size: inherit; }
+
 .clearfix { clear: both; }
 
 .mobile-download-area  {
@@ -55,7 +58,7 @@ a {
 	transform: translate(0,-50%);
 	transform: translate3d(0,-50%,0);
 }
-.mobile-download-area .mobile-download-area-img img { width: 100%;}
+.mobile-download-area .mobile-download-area-img img { width: 100%; }
 
 .container {
 	position: relative;
@@ -193,9 +196,7 @@ a {
 	}
 }
 
-.sidebar .open-close-toggle {
-	display: none;
-}
+.sidebar .open-close-toggle { display: none; }
 .sidebar .toggle {
 	position: absolute;
 	top: 0;
