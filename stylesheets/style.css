@@ -22,6 +22,16 @@ body {
 	}
 }
 
+hr {
+	margin: .9375rem 0;
+	border-color: rgba(0,0,0,.1);
+}
+
+a {
+	font-weight: 600;
+	text-decoration: none;
+}
+
 .clearfix { clear: both; }
 
 .mobile-download-area  {
