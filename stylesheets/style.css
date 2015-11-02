@@ -13,6 +13,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: #fff;
+	overflow: hidden;
 }
 .clearfix { clear: both; }
 
@@ -58,11 +59,18 @@ body {
 		width: 100%;
 	}
 }
-@media (max-width: 47.938em) {
+@media (max-width: 47.938em) and (orientation: portrait) {
 	.main {
 		margin-right: 0;
 		padding-right: 0;
 		height: auto;
+	}
+}
+@media (max-width: 47.938em) and (orientation: landscape) {
+	.main {
+		margin-right: 0;
+		padding-right: 0;
+		height: 100%;
 	}
 }
 
@@ -82,7 +90,7 @@ body {
 	transform: translate(-50%,-50%);
 	transform: translate3d(-50%,-50%,0);
 }
-@media (max-width: 47.938em) {
+@media (max-width: 47.938em) and (orientation: portrait) {
 	.main .canvas {
 		position: static;
 		margin: 40px 10% 70px;
@@ -144,15 +152,78 @@ body {
 	border-left: 1px solid #626262;
 	background-color: #fff;
 	box-shadow: 0 0 30px rgba(0,0,0,.6);
-	overflow: auto;
 }
 @media (max-width: 75em) {
 	.sidebar { width: 300px; }
 }
-@media (max-width: 47.938em) {
+@media (max-width: 47.938em) and (orientation: portrait) {
 	.sidebar {
 		width: 100%;
 		height: auto;
+	}
+}
+@media (max-width: 47.938em) and (orientation: landscape) {
+	.sidebar {
+		position: absolute;
+		right: 0;
+		height: 100%;
+		transition: transform .4s ease-out;
+	}
+	.close .sidebar {
+		transform:  translate(100%,0);
+		transform:  translate3d(100%,0,0);
+		transition: transform .3s ease-out;
+	}
+}
+
+.sidebar .open-close-toggle {
+	display: none;
+}
+.sidebar .toggle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 50px;
+	height: 50px;
+	font-size: 12px;
+	line-height: 50px;
+	font-weight: 800;
+	text-transform: uppercase;
+	text-align: center;
+	transition: transform .3s ease-out;
+}
+.sidebar .close-toggle {
+	opacity: 1;
+	transform: scale(1);
+	transform: scale3d(1);
+}
+.sidebar .open-toggle {
+	opacity: 0;
+	transform: scale(0);
+	transform: scale3d(0);
+}
+.close .sidebar .close-toggle {
+	opacity: 0;
+	transform: scale(0);
+	transform: scale3d(0);
+}
+.close .sidebar .open-toggle {
+	opacity: 1;
+	transform: scale(1);
+	transform: scale3d(1);
+}
+@media (max-width: 47.938em) and (orientation: landscape) {
+	.sidebar .open-close-toggle {
+		position: absolute;
+		left: -50px;
+		display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 0 0 0 4px;
+    background-color: #fff;
+		box-shadow: -4px 2px 5px rgba(0,0,0,.6);
+		cursor: pointer;
 	}
 }
 
@@ -164,7 +235,11 @@ body {
 	color: #ff0080;
 }
 
-.sidebar .content-editor { padding: .9375rem 0; }
+.sidebar .content-editor {
+	padding: .9375rem 0;
+	height: 100%;
+	overflow: auto;
+}
 .sidebar .content-editor-label {
 	position: relative;
   display: block;
