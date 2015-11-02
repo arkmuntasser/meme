@@ -239,6 +239,7 @@ body {
 	padding: .9375rem 0;
 	height: 100%;
 	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 }
 .sidebar .content-editor-label {
 	position: relative;
