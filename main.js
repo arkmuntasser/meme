@@ -7,4 +7,8 @@ $(document).ready(function() {
     $(this).parent().toggle();
     $(this).parent().find("img").remove();
   });
+
+  $(".open-close-toggle").click(function() {
+    $("body").toggleClass("close");
+  });
 });
