@@ -15,6 +15,13 @@ body {
   background-color: #fff;
 	overflow: hidden;
 }
+@media (max-width: 47.938em) and (orientation: portrait) {
+	html,
+	body {
+		overflow: visible;
+	}
+}
+
 .clearfix { clear: both; }
 
 .mobile-download-area  {

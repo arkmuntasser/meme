@@ -8,11 +8,26 @@ $(document).ready(function() {
     return window.innerHeight * zoomLevel;
   };
 
+  var adjustHeight = function() {
+    var iosHeight = getIOSWindowHeight();
+    var height = $(window).height();
+    var initPaddingTop = height - iosHeight;
+    $(".container").attr("style", "height: " + iosHeight + "px; padding-top: " + initPaddingTop + "px;");
+    $(".mobile-download-area").attr("style", "height: " + iosHeight + "px; padding-top: " + initPaddingTop + "px;");
+    if($(".sidebar").css("height") === "auto") {
+
+    }
+  };
+
   $(window).resize(function() {
-    $(".container").attr("style", "height: " + getIOSWindowHeight() + "px;");
+    adjustHeight();
   });
 
-  $(".container").attr("style", "height: " + getIOSWindowHeight() + "px;");
+  adjustHeight();
+
+  $(window).scroll(function() {
+    var position = $(window).scrollTop();
+  });
 
   $(".close").click(function() {
     $(this).parent().toggle();
