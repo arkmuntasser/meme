@@ -20,6 +20,7 @@
 			<div class="column main">
         <div class="canvas-wrapper">
           <canvas class="canvas wide" id="canvas" width="1024" height="512"></canvas>
+          <canvas class="canvas canvas-buffer wide" id="canvas-buffer" width="1024" height="512"></canvas>
           <div class="download-wrapper">
             <a class="button-download button-download-notouch" download="meme-maker">Download Image</a>
             <a class="button-download button-download-touch">Download Image</a>
@@ -37,8 +38,8 @@
 					<label class="content-editor-label" for="ratio">
 						Aspect Ratio<br>
 						<select name="ratio" class="content-editor-select select-ratio">
-							<option value="0">Twitter/widescreen: 1024x512</option>
-							<option value="1">Instagram/square: 600x600</option>
+							<option value="wide">Twitter/widescreen: 1024x512</option>
+							<option value="square">Instagram/square: 600x600</option>
 						</select>
 					</label>
 
@@ -115,6 +116,7 @@
 		<script type='application/javascript' src='fastclick.js'></script>
     <script src="modernizr-custom.js"></script>
 		<script src="main.js" type="text/javascript"></script>
+    <script src="canvas.js" type="text/javascript"></script>
 		<script src="meme.js" type="text/javascript"></script>
   </body>
 </html>

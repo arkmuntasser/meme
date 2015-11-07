@@ -42,7 +42,7 @@ small > * { font-size: inherit; }
 	z-index: 1000;
 	display: none;
 	padding: .9375rem;
-	width: 100vh;
+	width: 100vw;
 	height: 100vh;
 	background-color: rgba(0,0,0,.6);
 }
@@ -101,14 +101,18 @@ small > * { font-size: inherit; }
 }
 .main .canvas {
 	position: relative;
-	border: 1px solid #d2d2d2;
-	background-color: #ccc;
-	box-shadow: 0 0 20px rgba(0,0,0,.4);
 	top: 50%;
 	left: 50%;
 	max-width: 80%;
+	border: 1px solid #d2d2d2;
+	background-color: #ccc;
+	box-shadow: 0 0 20px rgba(0,0,0,.4);
 	transform: translate(-50%,-50%);
 	transform: translate3d(-50%,-50%,0);
+}
+.main .canvas.canvas-buffer {
+	position: absolute;
+	box-shadow: none;
 }
 @media (max-width: 47.938em) and (orientation: portrait) {
 	.main .canvas {
@@ -118,6 +122,10 @@ small > * { font-size: inherit; }
 		height: auto;
 		transform: translate(0,0);
 		transform: translate3d(0,0,0);
+	}
+	.main .canvas.canvas-buffer {
+		top: 0;
+		left: 0;
 	}
 }
 
