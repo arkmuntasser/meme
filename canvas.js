@@ -64,7 +64,7 @@ Canvas.prototype.updateCanvas = function() {
     if(!self.hold && self.loop < count) {
       self.hold = true;
 
-      if(self.stack[self.settings.order[self.loop]]) {
+      if(self.settings.order[self.loop] !== undefined && self.stack[self.settings.order[self.loop]]) {
         tracker = 0;
 
         switch (self.settings.order[self.loop]) {
@@ -88,7 +88,7 @@ Canvas.prototype.updateCanvas = function() {
       self.loop++;
     }
 
-    if(self.loop >= count) {
+    if(self.loop > count) {
       window.clearInterval(renderer);
       self._cloneCanvas();
     }
@@ -138,6 +138,7 @@ Canvas.prototype._drawLogoImage = function() {
       self.context.drawImage(img, x, y, img.width, img.height);
 
       self.hold = false;
+      self._cloneCanvas();
     }
   } else {
     self.hold = false;
