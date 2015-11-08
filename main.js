@@ -1,4 +1,5 @@
 $(document).ready(function() {
+<<<<<<< HEAD
     var text = $('textarea[name=text]').val();
     var c = document.getElementById("canvas");
     var ctx = c.getContext("2d");
@@ -279,4 +280,22 @@ $(document).ready(function() {
     };
 
     document.getElementsByClassName("button-download")[0].addEventListener('click', dlCanvas, false);
+=======
+  $(function() {
+    FastClick.attach(document.body);
+  });
+
+  $(window).scroll(function() {
+    var position = $(window).scrollTop();
+  });
+
+  $(".close").click(function() {
+    $(this).parent().toggle();
+    $(this).parent().find("img").remove();
+  });
+
+  $(".open-close-toggle").click(function() {
+    $("body").toggleClass("close");
+  });
+>>>>>>> gh-pages
 });
