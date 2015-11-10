@@ -1,32 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Meme Generator</title>
-	<link rel="stylesheet" href="main.css">
-</head>
-<body>
-	<div class="container">
-		<div class="title">
-			<h1>Meme Generator</h1>
-		</div>
-		<div class="clearfix">
-			<div class="left-col">
-				<canvas id="canvas" width="1024" height="512"></canvas>
-				<div class="download-wrapper">
-					<a download="Canvas.png" class="button-download">Download Image</a>
-				</div>
-			</div>
-			<div class="right-col">
-				<form class="content-editor">
-					<label class="content-editor-label" for="ratio">
-						Aspect Ratio:<br>
-						<select name="ratio" class="content-editor-select select-ratio">
-							<option value="0">Twitter/widescreen: 1024x512</option>
-							<option value="1">Instagram/square: 600x600</option>
-=======
 <html lang="en-us">
   <head>
 		<meta charset="utf-8">
@@ -68,32 +40,19 @@
 						<select name="ratio" class="content-editor-select select-ratio">
 							<option value="wide">Twitter/widescreen: 1024x512</option>
 							<option value="square">Instagram/square: 600x600</option>
->>>>>>> gh-pages
 						</select>
 					</label>
 
 					<label class="content-editor-label" for="img">
-<<<<<<< HEAD
-						Background image:<br>
-						<div class="file-upload">
-							<span>Click or drag image</span>
-=======
 						Background image<br>
 						<div class="file-upload">
 							<span class="file-upload-notouch">Click or drag image</span>
 							<span class="file-upload-touch">Tap to add image</span>
->>>>>>> gh-pages
 							<input class="content-editor-input input-image" type='file' name="img" />
 							<input name="imgstr" type="hidden" value="">
 						</div>
 					</label>
 
-<<<<<<< HEAD
-					<textarea class="content-editor-input input-text" name="text">Add your text here...</textarea>
-
-					<label class="content-editor-label clearfix">
-						Text alignment:<br>
-=======
           <label class="content-editor-label" for="text">
             Text<br>
   					<textarea class="content-editor-input input-text" name="text">Hello, world!</textarea>
@@ -101,7 +60,6 @@
 
 					<div class="content-editor-label">
 						Text alignment<br>
->>>>>>> gh-pages
 						<select class="conent-editor-select select-align" name="textHAlign">
 							<option value="left">Left</option>
 							<option value="center">Center</option>
@@ -112,16 +70,6 @@
 							<option value="middle">Middle</option>
 							<option value="bottom">Bottom</option>
 						</select>
-<<<<<<< HEAD
-					</label>
-
-					<label class="content-editor-label" for="overlay">
-						Background overlay color:<br>
-						<div class="radios">
-							<label>
-								<input class="content-editor-input radio-transparent" name="overlay" type="radio" value="transparent" checked="checked"> None
-							</label>
-=======
             <div class="clearfix"></div>
 					</div>
 
@@ -129,56 +77,32 @@
 						Background overlay color<br>
 						<div class="radios">
               <input class="content-editor-input input-radio radio-none" name="overlay" type="radio" value="transparent" checked="checked">
->>>>>>> gh-pages
 							<input class="content-editor-input input-radio radio-red" name="overlay" type="radio" value="#c0392b">
 							<input class="content-editor-input input-radio radio-orange" name="overlay" type="radio" value="#e67e22">
 							<input class="content-editor-input input-radio radio-yellow" name="overlay" type="radio" value="#f1c40f">
 							<input class="content-editor-input input-radio radio-green" name="overlay" type="radio" value="#2ecc71">
 							<input class="content-editor-input input-radio radio-blue" name="overlay" type="radio" value="#2980b9">
 							<input class="content-editor-input input-radio radio-purple" name="overlay" type="radio" value="#8e44ad">
-<<<<<<< HEAD
-=======
               <input class="content-editor-input input-radio radio-pink" name="overlay" type="radio" value="#ff0080">
->>>>>>> gh-pages
 							<input class="content-editor-input input-radio radio-black" name="overlay" type="radio" value="#000000">
 							<input name="colorstr" type="hidden" value="transparent">
 						</div>
 					</label>
 
 					<label class="content-editor-label" for="opacity">
-<<<<<<< HEAD
-						Overlay opacity:<br>
-=======
 						Overlay opacity<br>
->>>>>>> gh-pages
 						<input class="content-editor-input input-range" name="opacity" type="range" max="1" min="0.00" step=".01" value=".5">
 					</label>
 
 					<label class="content-editor-label" for="logo">
-<<<<<<< HEAD
-						Logo image:<br>
-						<div class="file-upload">
-							<span>Click or drag image</span>
-=======
 						Logo image<br>
 						<div class="file-upload">
 							<span class="file-upload-notouch">Click or drag image</span>
 							<span class="file-upload-touch">Tap to add image</span>
->>>>>>> gh-pages
 							<input class="content-editor-input input-logo" type='file' name="logo" />
 							<input name="logostr" type="hidden" value="">
 						</div>
 					</label>
-<<<<<<< HEAD
-				</form>
-			</div>
-		</div>
-	</div>
-
-	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="main.js" type="text/javascript"></script>
-</body>
-=======
           <hr>
           <small>
             <span style="color: red;">❤</span> Built by <a href="https://github.com/arkmuntasser" target="_blank">Amir</a>, Bree, & <a href="https://github.com/blakecollins" target="_blank">Blake</a>.
@@ -195,5 +119,4 @@
     <script src="canvas.js" type="text/javascript"></script>
 		<script src="meme.js" type="text/javascript"></script>
   </body>
->>>>>>> gh-pages
 </html>
