@@ -88,7 +88,7 @@ Canvas.prototype.updateCanvas = function() {
       self.loop++;
     }
 
-    if(self.loop > count) {
+    if(self.loop >= count) {
       window.clearInterval(renderer);
       self._cloneCanvas();
     }
