@@ -28,6 +28,7 @@
         </div>
 			</div>
 
+			<!-- Breakdown into 6 cats: ratio, image, logo, overlay, text, text -->
       <div class="column sidebar">
         <div class="open-close-toggle">
           <span class="toggle close-toggle">x</span>
@@ -37,7 +38,7 @@
           <h1>Meme Maker</h1>
 					<label class="content-editor-label" for="ratio">
 						Aspect Ratio<br>
-						<select name="ratio" class="content-editor-select select-ratio">
+						<select name="ratio" class="content-editor-input content-editor-select select-ratio">
 							<option value="wide">Twitter/widescreen: 1024x512</option>
 							<option value="square">Instagram/square: 600x600</option>
 						</select>
@@ -45,10 +46,10 @@
 
 					<label class="content-editor-label" for="img">
 						Background image<br>
-						<div class="file-upload">
+						<div class="content-editor-input file-upload">
 							<span class="file-upload-notouch">Click or drag image</span>
 							<span class="file-upload-touch">Tap to add image</span>
-							<input class="content-editor-input input-image" type='file' name="img" />
+							<input class="input-image" type='file' name="img" />
 							<input name="imgstr" type="hidden" value="">
 						</div>
 					</label>
@@ -60,12 +61,12 @@
 
 					<div class="content-editor-label">
 						Text alignment<br>
-						<select class="conent-editor-select select-align" name="textHAlign">
+						<select class="content-editor-input conent-editor-select select-align" name="textHAlign">
 							<option value="left">Left</option>
 							<option value="center">Center</option>
 							<option value="right">Right</option>
 						</select>
-						<select class="conent-editor-select select-align" name="textVAlign">
+						<select class="content-editor-input conent-editor-select select-align" name="textVAlign">
 							<option value="top">Top</option>
 							<option value="middle">Middle</option>
 							<option value="bottom">Bottom</option>
@@ -75,16 +76,16 @@
 
 					<label class="content-editor-label" for="overlay">
 						Background overlay color<br>
-						<div class="radios">
-              <input class="content-editor-input input-radio radio-none" name="overlay" type="radio" value="transparent" checked="checked">
-							<input class="content-editor-input input-radio radio-red" name="overlay" type="radio" value="#c0392b">
-							<input class="content-editor-input input-radio radio-orange" name="overlay" type="radio" value="#e67e22">
-							<input class="content-editor-input input-radio radio-yellow" name="overlay" type="radio" value="#f1c40f">
-							<input class="content-editor-input input-radio radio-green" name="overlay" type="radio" value="#2ecc71">
-							<input class="content-editor-input input-radio radio-blue" name="overlay" type="radio" value="#2980b9">
-							<input class="content-editor-input input-radio radio-purple" name="overlay" type="radio" value="#8e44ad">
-              <input class="content-editor-input input-radio radio-pink" name="overlay" type="radio" value="#ff0080">
-							<input class="content-editor-input input-radio radio-black" name="overlay" type="radio" value="#000000">
+						<div class="content-editor-input radios">
+              <input class="input-radio radio-none" name="overlay" type="radio" value="transparent" checked="checked">
+							<input class="input-radio radio-red" name="overlay" type="radio" value="#c0392b">
+							<input class="input-radio radio-orange" name="overlay" type="radio" value="#e67e22">
+							<input class="input-radio radio-yellow" name="overlay" type="radio" value="#f1c40f">
+							<input class="input-radio radio-green" name="overlay" type="radio" value="#2ecc71">
+							<input class="input-radio radio-blue" name="overlay" type="radio" value="#2980b9">
+							<input class="input-radio radio-purple" name="overlay" type="radio" value="#8e44ad">
+              <input class="input-radio radio-pink" name="overlay" type="radio" value="#ff0080">
+							<input class="input-radio radio-black" name="overlay" type="radio" value="#000000">
 							<input name="colorstr" type="hidden" value="transparent">
 						</div>
 					</label>
@@ -96,10 +97,10 @@
 
 					<label class="content-editor-label" for="logo">
 						Logo image<br>
-						<div class="file-upload">
+						<div class="content-editor-input file-upload">
 							<span class="file-upload-notouch">Click or drag image</span>
 							<span class="file-upload-touch">Tap to add image</span>
-							<input class="content-editor-input input-logo" type='file' name="logo" />
+							<input class="input-logo" type='file' name="logo" />
 							<input name="logostr" type="hidden" value="">
 						</div>
 					</label>

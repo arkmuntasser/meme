@@ -34,6 +34,7 @@ $(document).ready(function() {
   $('select[name=ratio]').change(function() {
     var ratio = $(this).val();
 
+    $(".canvas").toggleClass("wide");
     c.changRatio(ratio);
   });
 
