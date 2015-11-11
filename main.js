@@ -3,10 +3,6 @@ $(document).ready(function() {
     FastClick.attach(document.body);
   });
 
-  $(window).scroll(function() {
-    var position = $(window).scrollTop();
-  });
-
   $(".close").click(function() {
     $(this).parent().toggle();
     $(this).parent().find("img").remove();
