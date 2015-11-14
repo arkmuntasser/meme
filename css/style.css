@@ -332,7 +332,10 @@ small > * { font-size: inherit; }
 .mac .sidebar .content-editor { padding-right: 30px; }
 @media (max-width: 40em) and (orientation: portrait) {
 	.sidebar .content-editor,
-	.mac .sidebar .content-editor { padding: 0; }
+	.mac .sidebar .content-editor {
+		right: 0;
+		padding: 0;
+	}
 }
 
 .sidebar .content-editor-label {
