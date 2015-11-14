@@ -20,7 +20,7 @@ $(document).ready(function() {
 
   $('.close').click(function() {
     $(this).parent().toggle();
-    $(this).parent().find('img').remove();
+    $(this).parent().find('.mobile-download-area-img img').remove();
   });
 
   $('.open-close-toggle').click(function() {
