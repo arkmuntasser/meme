@@ -23,18 +23,22 @@ $(document).ready(function() {
       var id = $(this).attr("href");
       var startingPoint = $(prevHref);
       var baseSpeed = 400;
-      var buffer = $("html").hasClass("touchevents") ? $(".content-editor-track").width() * .046785 : 0;
+      var buffer = 0;
 
       scrollToId(id, startingPoint, baseSpeed, buffer);
     }
   });
 
+  $(".content-editor-wrapper").scroll(function() {
+    var left = $(this).scrollLeft();
+  });
+
   var scrollToId = function(id, startingPoint, baseSpeed, buffer) {
     var thatIndex = $(".content-editor-label").index($(id)) - 1;
-    var thatLeft = $("html").hasClass("touchevents") ? thatIndex * 250 + buffer / 2 : thatIndex * 250;
+    var thatLeft = thatIndex * 250;
 
     var thisIndex = $(".content-editor-label").index(startingPoint) - 1;
-    var thisLeft = $("html").hasClass("touchevents") ? thisIndex * 250 + buffer / 2 : thisIndex * 250;
+    var thisLeft = thisIndex * 250;
 
     var offsetDiff = Math.abs(thatLeft - thisLeft);
     var speed = (offsetDiff * baseSpeed) / 1000
