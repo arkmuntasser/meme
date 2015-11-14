@@ -193,7 +193,6 @@ small > * { font-size: inherit; }
 .touchevents .main .button-download-touch { display: block; }
 
 .sidebar {
-	padding: 0 .9375rem;
 	width: 25%;
 	height: 100%;
 	border-left: 1px solid #626262;
@@ -322,13 +321,18 @@ small > * { font-size: inherit; }
 }
 
 .sidebar .content-editor {
-	padding: .9375rem 0;
+	position: relative;
+	right: -15px;
+	padding: .9375rem 15px .9375rem 0;
+	width: 100%;
 	height: 100%;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 }
+.mac .sidebar .content-editor { padding-right: 30px; }
 @media (max-width: 40em) and (orientation: portrait) {
-	.sidebar .content-editor { padding: 0; }
+	.sidebar .content-editor,
+	.mac .sidebar .content-editor { padding: 0; }
 }
 
 .sidebar .content-editor-label {

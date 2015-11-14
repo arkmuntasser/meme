@@ -3,6 +3,12 @@ $(document).ready(function() {
     FastClick.attach(document.body);
   });
 
+  if (navigator.userAgent.indexOf('Mac OS X') != -1) {
+    $("body").addClass("mac");
+  } else {
+    $("body").addClass("pc");
+  }
+
   var scrollToId = function(id, startingPoint, baseSpeed, buffer) {
     var thatIndex = $('.content-editor-label').index($(id)) - 1;
     var thatLeft = thatIndex * 250;
