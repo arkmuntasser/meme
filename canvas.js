@@ -64,7 +64,7 @@ Canvas.prototype.updateCanvas = function() {
     if(!self.hold && self.loop < count) {
       self.hold = true;
 
-      if(self.stack[self.settings.order[self.loop]]) {
+      if(self.settings.order[self.loop] !== undefined && self.stack[self.settings.order[self.loop]]) {
         tracker = 0;
 
         switch (self.settings.order[self.loop]) {
@@ -138,6 +138,7 @@ Canvas.prototype._drawLogoImage = function() {
       self.context.drawImage(img, x, y, img.width, img.height);
 
       self.hold = false;
+      self._cloneCanvas();
     }
   } else {
     self.hold = false;
@@ -268,6 +269,7 @@ Canvas.prototype.changRatio = function(ratio) {
   this.canvas.height = this.settings.height;
 
   this.updateCanvas();
+  this._cloneCanvas();
 };
 
 // Text
