@@ -464,9 +464,9 @@ small > * { font-size: inherit; }
 
 .sidebar .icons {
 	display: none;
-	padding: .9375rem 0;
+	margin-bottom: .46785rem;
 	width: 100%;
-	height: calc(24px + 1.875rem);
+	height: 24px;
 	text-align: center;
 }
 @media (max-width: 40em) and (orientation: portrait) {
