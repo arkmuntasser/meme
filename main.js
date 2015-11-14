@@ -31,6 +31,12 @@ $(document).ready(function() {
 
   $(".content-editor-wrapper").scroll(function() {
     var left = $(this).scrollLeft();
+    var index = left / 250;
+
+    if(Number.isInteger(index)) {
+      $(".icon").removeClass("active");
+      $(".icon").eq(index).addClass("active");
+    }
   });
 
   var scrollToId = function(id, startingPoint, baseSpeed, buffer) {
