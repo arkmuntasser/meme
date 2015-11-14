@@ -269,6 +269,7 @@ Canvas.prototype.changRatio = function(ratio) {
   this.canvas.height = this.settings.height;
 
   this.updateCanvas();
+  this._cloneCanvas();
 };
 
 // Text
