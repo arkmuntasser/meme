@@ -223,6 +223,10 @@ small > * { font-size: inherit; }
 		height: 40%;
 		border: none;
 	}
+	.close .sidebar {
+		transform:  none;
+		transition: none;
+	}
 }
 @media (max-width: 40em) and (orientation: landscape) {
 	.sidebar {
