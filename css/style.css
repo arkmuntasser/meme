@@ -485,7 +485,7 @@ small > * { font-size: inherit; }
 @media (max-width: 40em) and (orientation: portrait) {
 	.sidebar .icons { display: block; }
 }
-@media (max-width: 23.750em) {
+@media (max-width: 23.375em) {
 	.sidebar .icons { display: none; }
 }
 
