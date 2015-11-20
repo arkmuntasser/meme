@@ -257,6 +257,12 @@ small > * { font-size: inherit; }
 	text-align: center;
 	transition: transform .3s ease-out;
 }
+.sidebar .close-toggle img {
+	display: inline;
+	margin: 9px;
+	width: 100%;
+	max-width: 32px;
+}
 .sidebar .close-toggle {
 	opacity: 1;
 	transform: scale(1);
@@ -304,6 +310,7 @@ small > * { font-size: inherit; }
 	}
 }
 
+
 .sidebar header,
 .sidebar footer { padding: .46875rem .9375rem; }
 @media (max-width: 23.750em) {
@@ -312,6 +319,7 @@ small > * { font-size: inherit; }
 }
 
 .sidebar h1 {
+	margin: 0;
 	font-family: 'Kaushan Script', cursive;
 	font-size: 36px;
 	line-height: 54px;
@@ -384,6 +392,7 @@ small > * { font-size: inherit; }
 	height: 75px;
 	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 	font-size: 14px;
+	font-weight: normal;
 	line-height: 20px;
 	color: #333;
 }
