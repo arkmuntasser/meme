@@ -339,18 +339,26 @@ small > * { font-size: inherit; }
 	.sidebar footer { padding: 0 .9375rem; }
 }
 
+.sidebar footer .icon-info {
+	display: none;
+	visibility: hidden;
+}
 @media (max-width: 40em) and (orientation: portrait) {
 	.sidebar footer .icon-info {
 		position: absolute;
 		right: 0;
 		z-index: 1;
+		display: block;
 		margin: .47375rem .9375rem;
 		width: 24px;
 		opacity: .5;
+		visibility: visible;
 		cursor: pointer;
 	}
 	.sidebar footer .icon-info:hover { opacity: 1; }
+}
 
+@media (max-width: 40em) and (orientation: portrait) {
 	.sidebar footer small {
 		position: absolute;
 	  right: .236875rem;;
