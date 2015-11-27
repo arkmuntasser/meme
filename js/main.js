@@ -50,6 +50,10 @@ $(document).ready(function() {
     }
   });
 
+  $('.icon-info').click(function() {
+    $(this).next().toggleClass("active");
+  });
+
   $('.content-editor-wrapper').scroll(function() {
     var left = $(this).scrollLeft();
     var index = left / 250;
