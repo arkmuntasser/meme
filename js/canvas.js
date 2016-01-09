@@ -1,18 +1,45 @@
 var Canvas = function(overwrite) {
-  this.canvas = document.getElementById('canvas');
-  this.context = this.canvas.getContext('2d');
+  this.backgroundCanvas = document.getElementById('canvas-background');
+  this.backgroundCtx = this.backgroundCanvas.getContext('2d');
+  this.backgroundCmdId = 0;
+
+  this.overlayCanvas = document.getElementById('canvas-overlay');
+  this.overlayCtx = this.overlayCanvas.getContext('2d');
+  this.overlayCmdId = 1;
+
+  this.textCanvas = document.getElementById('canvas-text');
+  this.textCtx = this.textCanvas.getContext('2d');
+  this.textCmdId = 2;
+
+  this.logoCanvas = document.getElementById('canvas-logo');
+  this.logoCtx = this.logoCanvas.getContext('2d');
+  this.logoCmdId = 3;
 
   this.bufferCanvas = document.getElementById('canvas-buffer');
-  this.bufferContext = this.bufferCanvas.getContext('2d');
+  this.bufferCtx = this.bufferCanvas.getContext('2d');
+  this.bufferCmdId = 4;
 
-  this.stack = {
-    'background' : false,
-    'overlay' : false,
-    'text' : true,
-    'logo' : false
-  };
-  this.hold = false;
-  this.loop = 0;
+  this.memoryCanvas = document.createElement('canvas');
+  this.memoryCtx = this.memoryCanvas.getContext('2d');
+  this.memoryCmdId = 5;
+
+  this.canvasArray = [
+    this.backgroundCanvas,
+    this.overlayCanvas,
+    this.textCanvas,
+    this.logoCanvas,
+    this.bufferCanvas,
+    this.memoryCanvas
+  ];
+
+  this.ctxArray = [
+    this.backgroundCtx,
+    this.overlayCtx,
+    this.textCtx,
+    this.logoCtx,
+    this.bufferCtx,
+    this.memoryCtx
+  ];
 
   this.settings = {
     backgroundImage : '',
@@ -29,85 +56,51 @@ var Canvas = function(overwrite) {
 
   $.extend(this.settings, overwrite);
 
-  this._clearCanvas();
-  this._cloneCanvas();
+  this._updateCanvas(0);
 };
 
 Canvas.prototype._cloneCanvas = function() {
-  this.bufferCanvas.width = this.settings.width;
-  this.bufferCanvas.height = this.settings.height;
+  this.memoryCanvas.width = this.settings.width;
+  this.memoryCanvas.height = this.settings.height;
 
-  this.bufferContext.drawImage(this.canvas, 0, 0);
+  for(var i = 0; i < this.canvasArray.length - 2; i++){
+    this.memoryCtx.drawImage(this.canvasArray[i], 0, 0);
+  }
+
+  this.bufferCtx.drawImage(this.memoryCanvas, 0, 0);
 };
 
-Canvas.prototype._clearCanvas = function() {
-  this.context.globalAlpha = 1;
-  this.context.beginPath();
-  this.context.rect(0, 0, this.settings.width, this.settings.height);
-  this.context.fillStyle = '#ccc';
-  this.context.fill();
-  this.context.fillStyle = '#ffffff';
-  this.context.font = 'bold 52px Helvetica Neue, Helvetica, Arial, sans-serif';
+Canvas.prototype._clearCanvas = function(startingCmdId) {
+  var self = this;
+
+  for(var i = startingCmdId; i < this.ctxArray.length; i++) {
+    this.ctxArray[i].globalAlpha = 1;
+    this.ctxArray[i].clearRect(0, 0, self.settings.width, self.settings.height);
+    this.ctxArray[i].fillStyle = '#ffffff';
+    this.ctxArray[i].font = 'bold 52px Helvetica Neue, Helvetica, Arial, sans-serif';
+  }
+
   this._wrapText(35, 82, 974, 58);
 }
 
-Canvas.prototype.updateCanvas = function() {
+Canvas.prototype._updateCanvas = function(startingCmdId) {
   var self = this;
-  var count = self._getTransformationCount();
-  var tracker = -1;
-  self.loop = 0;
 
-  self._clearCanvas();
-  var renderer = window.setInterval(function() {
-    tracker++;
-
-    if(!self.hold && self.loop < count) {
-      self.hold = true;
-
-      if(self.settings.order[self.loop] !== undefined && self.stack[self.settings.order[self.loop]]) {
-        tracker = 0;
-
-        switch (self.settings.order[self.loop]) {
-          case 'background':
-            self._drawBackgroundImage();
-            break;
-          case 'overlay':
-            self._drawOverlay();
-            break;
-          case 'text':
-            self._drawText();
-            break;
-          case 'logo':
-            self._drawLogoImage();
-            break;
-          default:
-            self._clearCanvas();
-        }
-      }
-
-      self.loop++;
-    }
-
-    if(self.loop >= count) {
-      window.clearInterval(renderer);
-      self._cloneCanvas();
-    }
-
-    self.hold = tracker >= 5 ? false : true;
-  }, 10);
-};
-
-Canvas.prototype._getTransformationCount = function() {
-  var self = this;
-  var count = 0;
-
-  for(key in self.stack) {
-    if(key) {
-      count++;
-    }
+  self._clearCanvas(startingCmdId);
+  switch (startingCmdId) {
+    case 0:
+      self._drawBackgroundImage();
+      break;
+    case 1:
+      self._drawOverlay();
+      break;
+    case 2:
+      self._drawText();
+      break;
+    case 3:
+      self._drawLogoImage();
+      break;
   }
-
-  return count;
 };
 
 // helpers
@@ -118,11 +111,9 @@ Canvas.prototype._drawBackgroundImage = function() {
     img.src = self.settings.backgroundImage;
     img.onload = function() {
       self._drawImageProp(img, 0, 0, self.settings.width, self.settings.height);
-
-      self.hold = false;
     }
   } else {
-    self.hold = false;
+    self._drawOverlay();
   }
 };
 
@@ -135,45 +126,42 @@ Canvas.prototype._drawLogoImage = function() {
       var x = self.settings.width - 50 - img.width;
       var y = self.settings.height - 40 - img.height;
 
-      self.context.drawImage(img, x, y, img.width, img.height);
-
-      self.hold = false;
-      self._cloneCanvas();
+      self.logoCtx.drawImage(img, x, y, img.width, img.height);
     }
-  } else {
-    self.hold = false;
   }
+
+  self._cloneCanvas();
 };
 
 Canvas.prototype._drawOverlay = function() {
+  var self = this;
   var color = this.settings.overlayColor;
 
   if(typeof color !== undefined && color !== '') {
-    this.context.globalAlpha = this.settings.opacity;
-    this.context.beginPath();
-    this.context.rect(0, 0, this.settings.width, this.settings.height);
-    this.context.fillStyle = this.settings.overlayColor;
-    this.context.fill();
-    this.context.globalAlpha = 1;
+    this.overlayCtx.globalAlpha = this.settings.opacity;
+    this.overlayCtx.beginPath();
+    this.overlayCtx.rect(0, 0, this.settings.width, this.settings.height);
+    this.overlayCtx.fillStyle = this.settings.overlayColor;
+    this.overlayCtx.fill();
+    this.overlayCtx.globalAlpha = 1;
   }
 
-  this.hold = false;
+  self._drawText();
 };
 
 Canvas.prototype._drawText = function() {
   var text = this.settings.text;
 
-  this.context.fillStyle = '#ffffff';
+  this.textCtx.fillStyle = '#ffffff';
   this._wrapText(35, 82, this.settings.width - 50, 58);
-
-  this.hold = false;
 };
 
 Canvas.prototype._drawImageProp = function(img, x, y, w, h, offsetX, offsetY) {
+  var self = this;
   if (arguments.length === 1) {
     x = y = 0;
-    w = this.context.canvas.width;
-    h = this.context.canvas.height;
+    w = this.backgroundCtx.canvas.width;
+    h = this.backgroundCtx.canvas.height;
   }
 
   // default offset is center
@@ -213,10 +201,12 @@ Canvas.prototype._drawImageProp = function(img, x, y, w, h, offsetX, offsetY) {
   if (ch > ih) ch = ih;
 
   // fill image in dest. rectangle
-  this.context.drawImage(img, cx, cy, cw, ch,  x, y, w, h);
+  this.backgroundCtx.drawImage(img, cx, cy, cw, ch,  x, y, w, h);
+  self._drawOverlay();
 };
 
 Canvas.prototype._wrapText = function(x, y, maxWidth, lineHeight) {
+  var self = this;
   var words = this.settings.text.toUpperCase().split(' ');
   var line = '';
 
@@ -225,7 +215,7 @@ Canvas.prototype._wrapText = function(x, y, maxWidth, lineHeight) {
   } else if(this.settings.textAlign == 'center') {
     x = this.settings.width / 2;
   }
-  this.context.textAlign = this.settings.textAlign;
+  this.textCtx.textAlign = this.settings.textAlign;
 
   if(this.settings.position == 'middle') {
     y = this.settings.height / 2;
@@ -235,11 +225,11 @@ Canvas.prototype._wrapText = function(x, y, maxWidth, lineHeight) {
 
   for(var n = 0; n < words.length; n++) {
       var testLine = line + words[n] + ' ';
-      var metrics = this.context.measureText(testLine);
+      var metrics = this.textCtx.measureText(testLine);
       var testWidth = metrics.width;
       if (testWidth > maxWidth && n > 0) {
 
-        this.context.fillText(line, x, y);
+        this.textCtx.fillText(line, x, y);
         line = words[n] + ' ';
         y += lineHeight;
       }
@@ -248,12 +238,13 @@ Canvas.prototype._wrapText = function(x, y, maxWidth, lineHeight) {
       }
   }
 
-  this.context.fillText(line, x, y);
+  this.textCtx.fillText(line, x, y);
+  self._drawLogoImage();
 };
 
 // Misc
 Canvas.prototype.getDataUrl = function() {
-  return this.canvas.toDataURL('image/png');
+  return this.bufferCanvas.toDataURL('image/png');
 };
 
 Canvas.prototype.changRatio = function(ratio) {
@@ -265,57 +256,55 @@ Canvas.prototype.changRatio = function(ratio) {
     this.settings.height = 600;
   }
 
-  this.canvas.width = this.settings.width;
-  this.canvas.height = this.settings.height;
+  for(var i = 0; i < this.canvasArray.length; i++) {
+    this.canvasArray[i].width = this.settings.width;
+    this.canvasArray[i].height = this.settings.height;
+  }
 
-  this.updateCanvas();
-  this._cloneCanvas();
+  this._updateCanvas(0);
 };
 
 // Text
 Canvas.prototype.changText = function(text) {
   this.settings.text = text;
 
-  this.updateCanvas();
+  this._updateCanvas(this.textCmdId);
 };
 
 Canvas.prototype.changeTextAlignment = function(alignment) {
   this.settings.textAlign = alignment;
 
-  this.updateCanvas();
+  this._updateCanvas(this.textCmdId);
 };
 
 Canvas.prototype.changeTextPosition = function(position) {
   this.settings.position = position;
 
-  this.updateCanvas();
+  this._updateCanvas(this.textCmdId);
 };
 
 // Images
 Canvas.prototype.changBackgroundImage = function(imgstr) {
   this.settings.backgroundImage = imgstr;
-  this.stack['background'] = true;
 
-  this.updateCanvas();
+  this._updateCanvas(this.backgroundCmdId);
 };
 
 Canvas.prototype.changLogoImage = function(imgstr) {
   this.settings.logoImage = imgstr;
-  this.stack['logo'] = true;
 
-  this.updateCanvas();
+  this._updateCanvas(this.logoCmdId);
 };
 
 // Overlays
 Canvas.prototype.changeOverlayOpacity = function(opacity) {
   this.settings.opacity = opacity
 
-  this.updateCanvas();
+  this._updateCanvas(this.overlayCmdId);
 };
 
 Canvas.prototype.changOverlayColor = function(color) {
   this.settings.overlayColor = color;
-  this.stack['overlay'] = true;
 
-  this.updateCanvas();
+  this._updateCanvas(this.overlayCmdId);
 };

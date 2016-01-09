@@ -118,13 +118,13 @@ small > * { font-size: inherit; }
 }
 
 .main .canvas {
-	position: relative;
+	position: absolute;
+	display: none;
 	top: 50%;
 	left: 50%;
 	max-width: 80%;
 	border: 1px solid #d2d2d2;
-	background-color: #ccc;
-	box-shadow: 0 0 20px rgba(0,0,0,.4);
+	background: transparent;
 	-webkit-transform: translate(-50%,-50%);
 					transform: translate(-50%,-50%);
 	-webkit-transform: translate3d(-50%,-50%,0);
@@ -135,9 +135,15 @@ small > * { font-size: inherit; }
   -webkit-backface-visibility: hidden;
   				backface-visibility: hidden;
 }
+.main .canvas.canvas-background { z-index: 1;	}
+.main .canvas.canvas-overlay { z-index: 2; }
+.main .canvas.canvas-text { z-index: 3; }
+.main .canvas.canvas-logo { z-index: 4; }
 .main .canvas.canvas-buffer {
-	position: absolute;
-	box-shadow: none;
+	display: block;
+	z-index: 5;
+	background-color: #ccc;
+	box-shadow: 0 0 20px rgba(0,0,0,.4);
 }
 @media (max-width: 40em) and (orientation: portrait) {
 	.main .canvas {
@@ -151,6 +157,7 @@ small > * { font-size: inherit; }
 
 .main .download-wrapper {
 	position: absolute;
+	z-index: 10;
 	bottom: 0;
 	left: 0;
 	right: 0;
