@@ -216,6 +216,7 @@ small > * { font-size: inherit; }
 @media (max-width: 47.938em) {
 	.sidebar {
 		position: absolute;
+		z-index: 20;
 		right: 0;
 		height: 100%;
 		-webkit-transition: transform .4s ease-out;
