@@ -1,6 +1,5 @@
 var html = '' +
-'<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/arkmuntasser/meme/master/extension/css/style.css" />' +
-'<div class="memeMakerExtension">' +
+'<div class="memeMakerExtension hide" id="memeMakerExtension">' +
   '<div class="container">' +
     '<div class="canvas-wrapper">' +
       '<div class="canvas back-panel"></div>' +

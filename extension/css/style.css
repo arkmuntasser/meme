@@ -8,6 +8,10 @@
 	box-shadow: 0 0 10px rgba(0,0,0,.1) !important;
 	overflow: hidden !important;
 }
+.memeMakerExtension.hide {
+	display: none !important;
+	visibility: hidden !important;
+}
 
 .memeMakerExtension * {
 	margin: 0 !important;
