@@ -1,5 +1,3 @@
-console.log("loaded Meme");
-
 var html = '' +
 '<link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/arkmuntasser/meme/master/extension/css/style.css" />' +
 '<div class="memeMakerExtension">' +
@@ -44,6 +42,3 @@ var str2DOMElement = function(html) {
 var el = str2DOMElement(html);
 
 document.body.appendChild(el);
-
-chrome.tabs.executeScript(null, { file : "canvas.js" });
-chrome.tabs.executeScript(null, { file : "main.js" });

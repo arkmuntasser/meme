@@ -151,7 +151,7 @@ function dlCanvas() {
   dt = dt.replace(/^data:application\/octet-stream/, 'data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=meme.png');
 
   var d = new Date();
-  this.download = this.download + "-" + d.getTime() + ".png";
+  this.download = "mememaker-" + d.getTime() + ".png";
   this.href = dt;
 };
 

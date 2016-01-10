@@ -9,7 +9,7 @@
     {
       "matches": ["http://*/*", "https://*/*"],
       "css": ["css/style.css"],
-      "js": ["loadMeme.js"]
+      "js": ["loadMeme.js", "canvas.js", "main.js"]
     }
   ],
   "permissions" : [
