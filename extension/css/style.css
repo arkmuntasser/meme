@@ -1,0 +1,174 @@
+.memeMakerExtension {
+	position: fixed;
+	z-index: 99999999;
+	top: 10px;
+	right: 10px;
+	max-width: 500px;
+	border-radius: 6px;
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
+	overflow: hidden;
+}
+
+.memeMakerExtension * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	color: #333;
+}
+
+.memeMakerExtension a {
+	font-size: inherit !important;
+	font-weight: inherit !important;
+	line-height: inherit !important;
+	font-style: inherit !important;
+	color: inherit !important;
+	text-decoration: inherit !important;
+	text-transform: inherit !important;
+}
+
+.memeMakerExtension .container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.memeMakerExtension .canvas-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.memeMakerExtension .canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	max-width: 100%;
+	background: transparent;
+}
+.memeMakerExtension .canvas.back-panel {
+	display: block;
+	position: relative;
+	width: 500px;
+	height: 250px;
+	background-color: #ccc;
+	z-index: 0;
+}
+.memeMakerExtension .canvas.canvas-background { z-index: 1;	}
+.memeMakerExtension .canvas.canvas-overlay { z-index: 2; }
+.memeMakerExtension .canvas.canvas-text { z-index: 3; }
+.memeMakerExtension .canvas.canvas-logo { z-index: 4; }
+.memeMakerExtension .canvas.canvas-buffer {
+	display: block;
+	z-index: 5;
+}
+.memeMakerExtension .canvas.front-panel {
+	display: block;
+	z-index: 6;
+	width: 500px;
+	height: 250px;
+	opacity: 0;
+	cursor: pointer;
+	transition: opacity .15s ease-in;
+}
+.memeMakerExtension .canvas.front-panel:hover { opacity: 1; }
+.memeMakerExtension .canvas.front-panel:after {
+	content: "Click to change background image";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 10px 15px;
+	font-size: 10px;
+	font-weight: 700;
+	color: #fff;
+	text-transform: uppercase;
+	border-radius: 4px;
+	background-color: rgba(0,0,0,.6);
+	transform: translate(-50%,-50%);
+	transform: translate3d(-50%,-50%,0);
+}
+
+.memeMakerExtension .input-image { display: none; }
+
+.memeMakerExtension .controls-wrapper {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	color: #fff;
+	background-color: #4285f4;
+	box-shadow: 0 0 5px rgba(0,0,0,.2);
+	overflow: hidden;
+}
+.memeMakerExtension .controls {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+.memeMakerExtension .controls.controls-left { float: left; }
+.memeMakerExtension .controls.controls-right { float: right; }
+.memeMakerExtension .controls li {
+	display: inline-block;
+	position: relative;
+	padding: 0 15px;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 50px;
+	color: #fff;
+	text-transform: uppercase;
+	list-style: none;
+	cursor: pointer;
+}
+.memeMakerExtension .controls li:hover {
+	background-color: rgba(255,255,255,.1);
+}
+.memeMakerExtension .controls li img {
+	width: 24px;
+	vertical-align: middle;
+}
+.memeMakerExtension .controls .control-overlay:after {
+	content: '';
+	position: absolute;
+	left: 16px;
+	bottom: 13px;
+	width: 22px;
+  height: 4px;
+}
+.memeMakerExtension .controls .control-overlay-none:after { background-color: rgba(255,255,255,.1); }
+.memeMakerExtension .controls .control-overlay-red:after { background-color: #c0392b; }
+.memeMakerExtension .controls .control-overlay-orange:after { background-color: #e67e22; }
+.memeMakerExtension .controls .control-overlay-yellow:after { background-color: #f1c40f; }
+.memeMakerExtension .controls .control-overlay-green:after { background-color: #2ecc71; }
+.memeMakerExtension .controls .control-overlay-blue:after { background-color: #2980b9; }
+.memeMakerExtension .controls .control-overlay-purple:after { background-color: #8e44ad; }
+.memeMakerExtension .controls .control-overlay-pink:after { background-color: #ff0080; }
+.memeMakerExtension .controls .control-overlay-black:after { background-color: #000000; }
+
+.textarea {
+	position: absolute;
+	z-index: 6;
+	top: 0px;
+	padding: 19px;
+	width: 100%;
+	font-size: 25px;
+	line-height: 27px;
+	font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+	border: none;
+	background: transparent;
+	resize: none;
+}
+.textarea:focus,
+.textarea:active {
+	outline: none;
+	box-shadow: none;
+}
+.textarea.textarea-left { text-align: left; }
+.textarea.textarea-center { text-align: center; }
+.textarea.textarea-right { text-align: right; }
+.textarea.textarea-top { padding-top: 19px; }
+.textarea.textarea-middle { padding-top: 115px; }
+.textarea.textarea-bottom { padding-top: 180px; }

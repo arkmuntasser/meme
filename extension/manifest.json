@@ -1,0 +1,32 @@
+{
+  "name" : "Meme Maker",
+  "version" : "1.0",
+  "description" : "Create shareable images with text for Twitter.",
+  "background" : {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "css": ["css/style.css"],
+      "js": ["loadMeme.js"]
+    }
+  ],
+  "permissions" : [
+    "activeTab",
+    "contextMenus",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "browser_action": {
+    "default_title": "Open Meme Maker",
+    "default_icon": "icon.png"
+  },
+  "minimum_chrome_version" : "6.0.0.0",
+  "icons" : {
+    "16" : "icon.png",
+    "48" : "icon.png",
+    "128" : "icon.png"
+  },
+  "manifest_version": 2
+}
