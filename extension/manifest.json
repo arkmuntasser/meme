@@ -1,7 +1,7 @@
 {
-  "name" : "Meme Maker",
+  "name" : "Kirby",
   "version" : "1.0",
-  "description" : "Create shareable images with text for Twitter.",
+  "description" : "Create shareable images with text perfect for all your social networks.",
   "background" : {
     "scripts": ["background.js"]
   },
@@ -19,14 +19,14 @@
     "https://*/*"
   ],
   "browser_action": {
-    "default_title": "Open Meme Maker",
-    "default_icon": "icon.png"
+    "default_title": "Open Kirby",
+    "default_icon": "icon-19.png"
   },
   "minimum_chrome_version" : "6.0.0.0",
   "icons" : {
-    "16" : "icon.png",
-    "48" : "icon.png",
-    "128" : "icon.png"
+    "16" : "icon-16.png",
+    "48" : "icon-48.png",
+    "128" : "icon-128.png"
   },
   "manifest_version": 2
 }

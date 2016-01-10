@@ -126,8 +126,11 @@
 	list-style: none !important;
 	cursor: pointer !important;
 }
-.memeMakerExtension .controls li:hover {
-	background-color: rgba(255,255,255,.1) !important;
+.memeMakerExtension .controls li:hover { background-color: rgba(255,255,255,.1) !important; }
+.memeMakerExtension .controls li.control-download { padding: 0 !important; }
+.memeMakerExtension .controls li.control-download a {
+	display: block;
+	padding: 0 15px !important;
 }
 .memeMakerExtension .controls li img {
 	position: relative !important;

@@ -8,7 +8,7 @@
 function getClickHandler() {
 
   return function(info, tab) {
-    var code = "var memeImageUrl = '" + info.srcUrl + "';";
+    var code = "var memeImageUrl = '" + info.srcUrl + "'; var notoggle = true;";
     chrome.tabs.executeScript(null, { code : code });
     chrome.tabs.executeScript(null, { file : "popup.js" });
   };
@@ -25,7 +25,7 @@ chrome.contextMenus.create({
 });
 
 chrome.browserAction.onClicked.addListener(function(tab) {
-  var code = "var memeImageUrl = '';";
+  var code = "var memeImageUrl = ''; var notoggle = false;";
   chrome.tabs.executeScript(null, { code : code });
   chrome.tabs.executeScript(null, { file : "popup.js" });
 });

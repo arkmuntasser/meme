@@ -19,7 +19,7 @@ var html = '' +
         '<li class="control" id="mememaker-position"><img src="https://raw.githubusercontent.com/arkmuntasser/meme/master/extension/assets/position-64.png" alt="align"></li>' +
       '</ul>' +
       '<ul class="controls controls-right">' +
-        '<li class="control"><a href="#" id="mememaker-download">Download</a></li>' +
+        '<li class="control control-download"><a href="#" id="mememaker-download">Download</a></li>' +
       '</ul>' +
       '<div class="clear"></div>' +
     '</div>' +
