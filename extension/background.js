@@ -18,7 +18,7 @@ function getClickHandler() {
  * Create a context menu which will only show up for images.
  */
 chrome.contextMenus.create({
-  "title" : "Get image info",
+  "title" : "Open image with Kirby",
   "type" : "normal",
   "contexts" : ["image"],
   "onclick" : getClickHandler()

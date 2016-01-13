@@ -1,6 +1,6 @@
 .memeMakerExtension {
 	position: fixed !important;
-	z-index: 99999999 !important;
+	z-index: 19999999999 !important;
 	top: 10px !important;
 	right: 10px !important;
 	max-width: 500px !important;
@@ -137,6 +137,10 @@
 	width: 24px !important;;
 	vertical-align: middle !important;
 }
+.memeMakerExtension .mememaker-align img { display: none; }
+.memeMakerExtension .mememaker-align-left .mememaker-icon-align-left { display: inline; }
+.memeMakerExtension .mememaker-align-center .mememaker-icon-align-center { display: inline; }
+.memeMakerExtension .mememaker-align-right .mememaker-icon-align-right { display: inline; }
 .memeMakerExtension .controls .control-overlay:after {
 	content: '' !important;
 	position: absolute !important;
@@ -161,6 +165,7 @@
 	top: 0px !important;
 	padding: 19px !important;
 	width: 100% !important;
+	max-height: 250px !important;
 	font-size: 25px !important;
 	line-height: 27px !important;
 	font-weight: bold !important;
@@ -169,6 +174,7 @@
 	border: none !important;
 	background: transparent !important;
 	resize: none !important;
+	overflow: hidden;
 }
 .textarea:focus,
 .textarea:active {

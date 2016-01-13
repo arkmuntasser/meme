@@ -136,7 +136,11 @@ document.getElementById("mememaker-overlay").addEventListener('click', changeCol
 
 // text
 function updateText() {
-  var text = document.getElementById("mememaker-textarea").value;
+  var node = document.getElementById("mememaker-textarea");
+  var text = node.value;
+
+  node.style.height = "1px";
+  node.style.height = (25 + node.scrollHeight) + "px";
 
   c.changText(text);
 }

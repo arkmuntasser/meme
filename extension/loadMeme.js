@@ -15,7 +15,11 @@ var html = '' +
       '<ul class="controls controls-left">' +
         '<li class="control" id="mememaker-upload"><img src="https://raw.githubusercontent.com/arkmuntasser/meme/master/extension/assets/background-64.png" alt="background"></li>' +
         '<li class="control control-overlay control-overlay-none" id="mememaker-overlay"><img src="https://raw.githubusercontent.com/arkmuntasser/meme/master/extension/assets/overlay-64.png" alt="overlay"></li>' +
-        '<li class="control" id="mememaker-align"><img src="https://raw.githubusercontent.com/arkmuntasser/meme/master/extension/assets/align-64.png" alt="align"></li>' +
+        '<li class="control mememaker-align-left" id="mememaker-align">' +
+          '<img class="mememaker-icon-align-left" src="https://raw.githubusercontent.com/arkmuntasser/meme/master/extension/assets/align-left-64.png" alt="align left">' +
+          '<img class="mememaker-icon-align-center" src="https://raw.githubusercontent.com/arkmuntasser/meme/master/extension/assets/align-center-64.png" alt="align center">' +
+          '<img class="mememaker-icon-align-right" src="https://raw.githubusercontent.com/arkmuntasser/meme/master/extension/assets/align-right-64.png" alt="align right">' +
+        '</li>' +
         '<li class="control" id="mememaker-position"><img src="https://raw.githubusercontent.com/arkmuntasser/meme/master/extension/assets/position-64.png" alt="align"></li>' +
       '</ul>' +
       '<ul class="controls controls-right">' +
