@@ -44,7 +44,7 @@ chrome.contextMenus.create({
 });
 
 chrome.browserAction.onClicked.addListener(function(tab) {
-  var code = "var memeImageUrl = ''; var notoggle = false;";
+  var code = "var base64Img = ''; var notoggle = false;";
   chrome.tabs.executeScript(null, { code : code });
   chrome.tabs.executeScript(null, { file : "popup.js" });
 });
