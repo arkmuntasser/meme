@@ -59,9 +59,10 @@
 	width: 500px !important;
 	height: 250px !important;
 	background-color: #ccc !important;
-	background-image: url("https://raw.githubusercontent.com/arkmuntasser/meme/master/extension/icon-185.png") !important;
+	background-image: url("https://raw.githubusercontent.com/arkmuntasser/meme/master/extension/icon-200.png") !important;
 	background-position: center !important;
 	background-repeat: no-repeat !important;
+	background-size: 100px;
 	z-index: 0 !important;
 }
 .memeMakerExtension .canvas.canvas-background { z-index: 1 !important;	}
