@@ -36,16 +36,25 @@ function changeAlignment() {
       c.changeTextAlignment("left");
       document.getElementById("mememaker-textarea").classList.remove('textarea-right');
       document.getElementById("mememaker-textarea").classList.add('textarea-left');
+
+      document.getElementById("mememaker-align").classList.remove('mememaker-align-right');
+      document.getElementById("mememaker-align").classList.add('mememaker-align-left');
       break;
     case 2:
       c.changeTextAlignment("center");
       document.getElementById("mememaker-textarea").classList.remove('textarea-left');
       document.getElementById("mememaker-textarea").classList.add('textarea-center');
+
+      document.getElementById("mememaker-align").classList.remove('mememaker-align-left');
+      document.getElementById("mememaker-align").classList.add('mememaker-align-center');
       break;
     case 3:
       c.changeTextAlignment("right");
       document.getElementById("mememaker-textarea").classList.remove('textarea-center');
       document.getElementById("mememaker-textarea").classList.add('textarea-right');
+
+      document.getElementById("mememaker-align").classList.remove('mememaker-align-center');
+      document.getElementById("mememaker-align").classList.add('mememaker-align-right');
       break;
   }
 }
@@ -62,16 +71,25 @@ function changePosition() {
       c.changeTextPosition("top");
       document.getElementById("mememaker-textarea").classList.remove('textarea-bottom');
       document.getElementById("mememaker-textarea").classList.add('textarea-top');
+
+      document.getElementById("mememaker-position").classList.remove('mememaker-position-bottom');
+      document.getElementById("mememaker-position").classList.add('mememaker-position-top');
       break;
     case 2:
       c.changeTextPosition("middle");
       document.getElementById("mememaker-textarea").classList.remove('textarea-top');
       document.getElementById("mememaker-textarea").classList.add('textarea-middle');
+
+      document.getElementById("mememaker-position").classList.remove('mememaker-position-top');
+      document.getElementById("mememaker-position").classList.add('mememaker-position-middle');
       break;
     case 3:
       c.changeTextPosition("bottom");
       document.getElementById("mememaker-textarea").classList.remove('textarea-middle');
       document.getElementById("mememaker-textarea").classList.add('textarea-bottom');
+
+      document.getElementById("mememaker-position").classList.remove('mememaker-position-middle');
+      document.getElementById("mememaker-position").classList.add('mememaker-position-bottom');
       break;
   }
 }

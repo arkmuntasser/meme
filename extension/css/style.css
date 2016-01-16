@@ -117,6 +117,7 @@
 	display: inline-block !important;
 	position: relative !important;
 	padding: 0 15px !important;
+	width: 50px !important;
 	height: 50px !important;
 	font-size: 12px !important;
 	font-weight: 700 !important;
@@ -127,25 +128,34 @@
 	cursor: pointer !important;
 }
 .memeMakerExtension .controls li:hover { background-color: rgba(255,255,255,.1) !important; }
-.memeMakerExtension .controls li.control-download { padding: 0 !important; }
+.memeMakerExtension .controls li.control-download {
+	padding: 0 !important;
+	width: auto !important;
+}
 .memeMakerExtension .controls li.control-download a {
 	display: block;
 	padding: 0 15px !important;
 }
 .memeMakerExtension .controls li img {
-	position: relative !important;
-	width: 24px !important;;
+	position: absolute !important;
+	top: 13px !important;
+	left: 13px !important;
+	width: 24px !important;
 	vertical-align: middle !important;
 }
-.memeMakerExtension .mememaker-align img { display: none; }
-.memeMakerExtension .mememaker-align-left .mememaker-icon-align-left { display: inline; }
-.memeMakerExtension .mememaker-align-center .mememaker-icon-align-center { display: inline; }
-.memeMakerExtension .mememaker-align-right .mememaker-icon-align-right { display: inline; }
+.memeMakerExtension .mememaker-align img { display: none !important; }
+.memeMakerExtension .mememaker-align-left .mememaker-icon-align-left { display: inline !important; }
+.memeMakerExtension .mememaker-align-center .mememaker-icon-align-center { display: inline !important; }
+.memeMakerExtension .mememaker-align-right .mememaker-icon-align-right { display: inline !important; }
+.memeMakerExtension .mememaker-position img { display: none !important; }
+.memeMakerExtension .mememaker-position-top .mememaker-icon-position-top { display: inline !important; }
+.memeMakerExtension .mememaker-position-middle .mememaker-icon-position-middle { display: inline !important; }
+.memeMakerExtension .mememaker-position-bottom .mememaker-icon-position-bottom { display: inline !important; }
 .memeMakerExtension .controls .control-overlay:after {
 	content: '' !important;
 	position: absolute !important;
-	left: 16px !important;
-	bottom: 13px !important;
+	left: 14px !important;
+	bottom: 14px !important;
 	width: 22px !important;
   height: 4px !important;
 }
@@ -159,13 +169,12 @@
 .memeMakerExtension .controls .control-overlay-pink:after { background-color: #ff0080 !important; }
 .memeMakerExtension .controls .control-overlay-black:after { background-color: #000000 !important; }
 
-.textarea {
+.memeMakerExtension .textarea {
 	position: absolute !important;
 	z-index: 6 !important;
-	top: 0px !important;
-	padding: 19px !important;
+	padding: 0 19px !important;
 	width: 100% !important;
-	max-height: 250px !important;
+	max-height: 212px !important;
 	font-size: 25px !important;
 	line-height: 27px !important;
 	font-weight: bold !important;
@@ -173,17 +182,25 @@
 	text-transform: uppercase !important;
 	border: none !important;
 	background: transparent !important;
+	box-shadow: none !important;
 	resize: none !important;
 	overflow: hidden;
 }
-.textarea:focus,
-.textarea:active {
+.memeMakerExtension .textarea:focus,
+.memeMakerExtension .textarea:active {
 	outline: none !important;
 	box-shadow: none !important;
 }
-.textarea.textarea-left { text-align: left !important; }
-.textarea.textarea-center { text-align: center !important; }
-.textarea.textarea-right { text-align: right !important; }
-.textarea.textarea-top { padding-top: 19px !important; }
-.textarea.textarea-middle { padding-top: 115px !important; }
-.textarea.textarea-bottom { padding-top: 180px !important; }
+.memeMakerExtension .textarea.textarea-left { text-align: left !important; }
+.memeMakerExtension .textarea.textarea-center { text-align: center !important; }
+.memeMakerExtension .textarea.textarea-right { text-align: right !important; }
+.memeMakerExtension .textarea.textarea-top { top: 19px !important; }
+.memeMakerExtension .textarea.textarea-middle {
+	top: 115px !important;
+	max-height: 116px !important;
+}
+.memeMakerExtension .textarea.textarea-bottom {
+	top: auto !important;
+	bottom: 19px !important;
+	max-height: 212px !important;
+}

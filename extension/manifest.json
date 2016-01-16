@@ -1,6 +1,6 @@
 {
   "name" : "Kirby",
-  "version" : "1.0.1",
+  "version" : "1.0.4",
   "description" : "Create shareable images with text perfect for all your social networks.",
   "background" : {
     "scripts": ["background.js"]
