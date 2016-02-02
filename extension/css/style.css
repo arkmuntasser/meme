@@ -1,0 +1,210 @@
+.memeMakerExtension {
+	position: fixed !important;
+	z-index: 19999999999 !important;
+	top: 10px !important;
+	right: 10px !important;
+	max-width: 500px !important;
+	border-radius: 6px !important;
+	box-shadow: 0 0 10px rgba(0,0,0,.1) !important;
+	overflow: hidden !important;
+}
+.memeMakerExtension.hide {
+	display: none !important;
+	visibility: hidden !important;
+}
+
+.memeMakerExtension * {
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	font-family: "Helvetica Neue", Helvetica, arial, sans-serif !important;
+	font-size: 16px !important;
+	line-height: 24px !important;
+	color: #333 !important;
+}
+
+.memeMakerExtension a {
+	font-size: inherit !important;
+	font-weight: inherit !important;
+	line-height: inherit !important;
+	font-style: inherit !important;
+	color: inherit !important;
+	text-decoration: inherit !important;
+	text-transform: inherit !important;
+}
+
+.memeMakerExtension .container {
+	position: relative !important;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.memeMakerExtension .canvas-wrapper {
+	position: relative !important;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.memeMakerExtension .canvas {
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	display: none !important;
+	max-width: 100% !important;
+	background-color: transparent !important;
+}
+.memeMakerExtension .canvas.back-panel {
+	display: block !important;
+	position: relative !important;
+	width: 500px !important;
+	height: 250px !important;
+	background-color: #ccc !important;
+	background-image: url("https://raw.githubusercontent.com/arkmuntasser/meme/master/extension/icon-200.png") !important;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: 100px;
+	z-index: 0 !important;
+}
+.memeMakerExtension .canvas.canvas-background { z-index: 1 !important;	}
+.memeMakerExtension .canvas.canvas-overlay { z-index: 2 !important; }
+.memeMakerExtension .canvas.canvas-text { z-index: 3 !important; }
+.memeMakerExtension .canvas.canvas-logo { z-index: 4 !important; }
+.memeMakerExtension .canvas.canvas-buffer {
+	display: block !important;
+	z-index: 5 !important;
+}
+.memeMakerExtension .canvas.front-panel {
+	display: block !important;
+	z-index: 6 !important;
+	width: 500px !important;
+	height: 250px !important;
+	opacity: 0 !important;
+	cursor: pointer !important;
+	transition: opacity .15s ease-in !important;
+}
+.memeMakerExtension .canvas.front-panel:hover { opacity: 1 !important; }
+.memeMakerExtension .canvas.front-panel:after {
+	content: "Click to change background image" !important;
+	position: absolute !important;
+	top: 50% !important;
+	left: 50% !important;
+	padding: 10px 15px !important;
+	font-size: 10px !important;
+	font-weight: 700 !important;
+	color: #fff !important;
+	text-transform: uppercase !important;
+	border-radius: 4px !important;
+	background-color: rgba(0,0,0,.6) !important;
+	transform: translate(-50%,-50%) !important;
+	transform: translate3d(-50%,-50%,0) !important;
+}
+
+.memeMakerExtension .input-image { display: none !important; }
+
+.memeMakerExtension .controls-wrapper {
+	position: relative !important;
+	width: 100% !important;
+	height: 50px !important;
+	color: #fff !important;
+	background-color: #4285f4 !important;
+	box-shadow: 0 0 5px rgba(0,0,0,.2) !important;
+	overflow: hidden !important;
+}
+.memeMakerExtension .controls {
+	margin: 0 !important;
+	padding: 0 !important;
+	text-align: left !important;
+}
+.memeMakerExtension .controls.controls-left { float: left !important; }
+.memeMakerExtension .controls.controls-right { float: right !important; }
+.memeMakerExtension .controls li {
+	display: inline-block !important;
+	position: relative !important;
+	padding: 0 15px !important;
+	width: 50px !important;
+	height: 50px !important;
+	font-size: 12px !important;
+	font-weight: 700 !important;
+	line-height: 50px !important;
+	color: #fff !important;
+	text-transform: uppercase !important;
+	list-style: none !important;
+	cursor: pointer !important;
+}
+.memeMakerExtension .controls li:hover { background-color: rgba(255,255,255,.1) !important; }
+.memeMakerExtension .controls li.control-download {
+	padding: 0 !important;
+	width: auto !important;
+}
+.memeMakerExtension .controls li.control-download a {
+	display: block;
+	padding: 0 15px !important;
+}
+.memeMakerExtension .controls li img {
+	position: absolute !important;
+	top: 13px !important;
+	left: 13px !important;
+	width: 24px !important;
+	vertical-align: middle !important;
+}
+.memeMakerExtension .mememaker-align img { display: none !important; }
+.memeMakerExtension .mememaker-align-left .mememaker-icon-align-left { display: inline !important; }
+.memeMakerExtension .mememaker-align-center .mememaker-icon-align-center { display: inline !important; }
+.memeMakerExtension .mememaker-align-right .mememaker-icon-align-right { display: inline !important; }
+.memeMakerExtension .mememaker-position img { display: none !important; }
+.memeMakerExtension .mememaker-position-top .mememaker-icon-position-top { display: inline !important; }
+.memeMakerExtension .mememaker-position-middle .mememaker-icon-position-middle { display: inline !important; }
+.memeMakerExtension .mememaker-position-bottom .mememaker-icon-position-bottom { display: inline !important; }
+.memeMakerExtension .controls .control-overlay:after {
+	content: '' !important;
+	position: absolute !important;
+	left: 14px !important;
+	bottom: 14px !important;
+	width: 22px !important;
+  height: 4px !important;
+}
+.memeMakerExtension .controls .control-overlay-none:after { background-color: rgba(255,255,255,.1) !important; }
+.memeMakerExtension .controls .control-overlay-red:after { background-color: #c0392b !important; }
+.memeMakerExtension .controls .control-overlay-orange:after { background-color: #e67e22 !important; }
+.memeMakerExtension .controls .control-overlay-yellow:after { background-color: #f1c40f !important; }
+.memeMakerExtension .controls .control-overlay-green:after { background-color: #2ecc71 !important; }
+.memeMakerExtension .controls .control-overlay-blue:after { background-color: #2980b9 !important; }
+.memeMakerExtension .controls .control-overlay-purple:after { background-color: #8e44ad !important; }
+.memeMakerExtension .controls .control-overlay-pink:after { background-color: #ff0080 !important; }
+.memeMakerExtension .controls .control-overlay-black:after { background-color: #000000 !important; }
+
+.memeMakerExtension .textarea {
+	position: absolute !important;
+	z-index: 6 !important;
+	padding: 0 19px !important;
+	width: 100% !important;
+	max-height: 212px !important;
+	font-size: 25px !important;
+	line-height: 27px !important;
+	font-weight: bold !important;
+	color: #fff !important;
+	text-transform: uppercase !important;
+	border: none !important;
+	background: transparent !important;
+	box-shadow: none !important;
+	resize: none !important;
+	overflow: hidden;
+}
+.memeMakerExtension .textarea:focus,
+.memeMakerExtension .textarea:active {
+	outline: none !important;
+	box-shadow: none !important;
+}
+.memeMakerExtension .textarea.textarea-left { text-align: left !important; }
+.memeMakerExtension .textarea.textarea-center { text-align: center !important; }
+.memeMakerExtension .textarea.textarea-right { text-align: right !important; }
+.memeMakerExtension .textarea.textarea-top { top: 19px !important; }
+.memeMakerExtension .textarea.textarea-middle {
+	top: 115px !important;
+	max-height: 116px !important;
+}
+.memeMakerExtension .textarea.textarea-bottom {
+	top: auto !important;
+	bottom: 19px !important;
+	max-height: 212px !important;
+}
