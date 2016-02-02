@@ -695,7 +695,7 @@ small > * { font-size: inherit; }
 	margin: 0 .703125rem;
   padding: 10px 0;
 	width: 24px;
-	opacity: .4;
+	opacity: .6;
 }
 .sidebar .icons .icon.active { opacity: 1; }
 .sidebar .icons .icon a {
