@@ -452,9 +452,16 @@ small > * { font-size: inherit; }
 }
 
 .sidebar .select-ratio {
+  padding: 0 .9375rem;
   height: 35px;
   border: none;
   background-color: rgba(255,255,255,.2);
+  -webkit-appearance: none;
+}
+.sidebar .select-ratio:focus,
+.sidebar .select-ratio:active {
+  box-shadow: none;
+  outline: none;
 }
 
 .sidebar input[type=range].input-range {
@@ -546,10 +553,12 @@ small > * { font-size: inherit; }
 .sidebar .select-align {
 	float: left;
 	margin-top: 10px;
+  padding: 0 .9375rem;
 	width: 49%;
   height: 35px;
   border: none;
   background-color: rgba(255,255,255,.2);
+  -webkit-appearance: none;
 }
 .sidebar .select-align:focus,
 .sidebar .select-align:active {
