@@ -1,0 +1,80 @@
+.main {
+	width: 75%;
+	height: 100%;
+	background-color: #424242;
+}
+@media (max-width: 1200px) {
+	.main {
+		margin-right: -300px;
+		padding-right: 300px;
+		width: 100%;
+	}
+}
+@media (max-width: 767px) {
+	.main {
+		margin-right: 0;
+		padding-right: 0;
+		height: 100%;
+	}
+}
+@media (max-width: 640px) and (orientation: portrait) {
+	.main {
+		margin-right: 0;
+		padding-right: 0;
+		height: 100%;
+	}
+}
+@media (max-width: 640px) and (orientation: landscape) {
+	.main {
+		margin-right: 0;
+		padding-right: 0;
+		height: 100%;
+	}
+}
+
+.main .canvas-wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+@media (max-width: 640px) and (orientation: portrait) {
+  .main .canvas-wrapper { height: 60%; }
+}
+
+.main .canvas {
+	position: absolute;
+	display: none;
+	top: 50%;
+	left: 50%;
+	max-width: 80%;
+	border: 1px solid #d2d2d2;
+	background: transparent;
+	-webkit-transform: translate(-50%,-50%);
+					transform: translate(-50%,-50%);
+	-webkit-transform: translate3d(-50%,-50%,0);
+					transform: translate3d(-50%,-50%,0);
+	-webkit-transform-style: preserve-3d;
+  	 -moz-transform-style: preserve-3d;
+  				transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  				backface-visibility: hidden;
+}
+.main .canvas.canvas-background { z-index: 1;	}
+.main .canvas.canvas-overlay { z-index: 2; }
+.main .canvas.canvas-text { z-index: 3; }
+.main .canvas.canvas-logo { z-index: 4; }
+.main .canvas.canvas-buffer {
+	display: block;
+	z-index: 5;
+	background-color: #ccc;
+	box-shadow: 0 0 20px rgba(0,0,0,.4);
+}
+@media (max-width: 640px) and (orientation: portrait) {
+	.main .canvas {
+		top: 50%;
+		min-width: 58%;
+		max-height: 95%;
+		height: auto;
+	}
+	.main .canvas.wide { width: 80%; }
+}
