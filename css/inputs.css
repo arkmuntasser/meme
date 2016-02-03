@@ -36,11 +36,12 @@
   background-repeat: no-repeat;
   background-position: 95% center;
   background-size: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
   -webkit-appearance: none;
 }
 .sidebar .select-ratio:focus,
 .sidebar .select-ratio:active {
-  box-shadow: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
   outline: none;
 }
 
@@ -142,11 +143,12 @@
   background-repeat: no-repeat;
   background-position: 95% center;
   background-size: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
   -webkit-appearance: none;
 }
 .sidebar .select-align:focus,
 .sidebar .select-align:active {
-	box-shadow: none;
+	box-shadow: 0 2px 5px rgba(0,0,0,.1);
   outline: none;
 }
 .sidebar .select-align:first-of-type { margin-right: 2%; }
@@ -163,10 +165,11 @@
 	line-height: 20px;
 	color: #fff;
   background-color: rgba(255,255,255,.2);
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
 }
 .sidebar .input-text:focus,
 .sidebar .input-text:active {
-	box-shadow: none;
+	box-shadow: 0 2px 5px rgba(0,0,0,.1);
   outline: none;
 }
 .sidebar .file-upload {
@@ -185,6 +188,7 @@
 	color: #fff;
 	text-align: center;
   background-color: rgba(255,255,255,.2);
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
   transition: background-color .3s ease-in;
 }
 .sidebar .file-upload:hover > span { background-color: rgba(255,255,255,.4); }
@@ -222,18 +226,19 @@
 	border-radius: 50%;
 	border: 1px #444 solid;
 	box-shadow: 0 0 0 rgba(0,0,0,.6);
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
 	cursor: pointer;
 	-webkit-appearance: none;
 		 -moz-appearance: none;
 		 			appearance: none;
-	-webkit-transition: box-shadow .2s ease-out;
-					transition: box-shadow .2s ease-out;
+	-webkit-transition: box-shadow .2s ease-out, border .2s ease-out;
+					transition: box-shadow .2s ease-out, border .2s ease-out;
 }
 .sidebar .input-radio:checked {
 	border-color: #fff;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-	-webkit-transition: box-shadow .3s ease-out;
-					transition: box-shadow .3s ease-out;
+	-webkit-transition: box-shadow .3s ease-out, border-color .3s ease-out;
+					transition: box-shadow .3s ease-out, border-color .3s ease-out;
 }
 .sidebar .input-radio.radio-transparent:checked:before { color: #333; }
 .sidebar .input-radio:checked,
