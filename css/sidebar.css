@@ -243,6 +243,7 @@
 @media (max-width: 640px) and (orientation: portrait) {
 	.sidebar .content-editor-wrapper {
 		position: relative;
+    margin-bottom: .9375rem;
 		width: 100%;
 		background-color: #3275e4;
 		overflow-x: scroll;
