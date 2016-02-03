@@ -46,7 +46,7 @@ small > * { font-size: inherit; }
 	padding: .9375rem;
 	width: 100vw;
 	height: 100vh;
-	background-color: rgba(0,0,0,.6);
+	background-color: rgba(255,255,255,.95);
 }
 .mobile-download-area .close {
 	float: right;
@@ -57,13 +57,21 @@ small > * { font-size: inherit; }
 .mobile-download-area .mobile-download-area-img {
 	position: relative;
 	top: 50%;
-	color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+	color: #333;
+  text-align: center;
+  text-transform: uppercase;
 	-webkit-transform: translate(0,-50%);
 					transform: translate(0,-50%);
 	-webkit-transform: translate3d(0,-50%,0);
 					transform: translate3d(0,-50%,0);
 }
-.mobile-download-area .mobile-download-area-img img { width: 100%; }
+.mobile-download-area .mobile-download-area-img img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.3);
+}
 
 .container {
 	position: relative;
