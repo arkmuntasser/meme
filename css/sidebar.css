@@ -225,6 +225,10 @@
 	.sidebar .icons { display: block; }
 }
 
+@media (max-width: 374px) and (orientation: portrait) {
+	.sidebar .icons { display: none; }
+}
+
 .sidebar .icons .icon {
 	display: inline-block;
 	margin: 0 .703125rem;
@@ -258,7 +262,7 @@
 	}
 	.sidebar .content-editor-track {
 		position: relative;
-		width: 1875px;
+		width: 1625px;
 		left: calc((100% - 250px) / 2);
 	}
 }
