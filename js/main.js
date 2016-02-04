@@ -25,7 +25,7 @@ $(document).ready(function() {
   }
 
   $('.close').click(function() {
-    $(this).parent().toggle();
+    $(this).parent().toggleClass("open");
     $(this).parent().find('.mobile-download-area-img img').remove();
   });
 

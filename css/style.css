@@ -40,14 +40,15 @@ small > * { font-size: inherit; }
 .clearfix { clear: both; }
 
 .mobile-download-area  {
+  display: none;
 	position: fixed;
 	z-index: 1000;
-	display: none;
 	padding: .9375rem;
 	width: 100vw;
 	height: 100vh;
 	background-color: rgba(255,255,255,.95);
 }
+.mobile-download-area.open  { display: block; }
 .mobile-download-area .close {
 	float: right;
 	width: 32px;
