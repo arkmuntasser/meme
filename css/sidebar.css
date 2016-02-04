@@ -241,6 +241,8 @@
 }
 .sidebar .icons .icon img { max-width: 100%; }
 
+.sidebar .content-editor-wrapper { margin-bottom: 1.875rem;
+}
 @media (max-width: 640px) and (orientation: portrait) {
 	.sidebar .content-editor-wrapper {
 		position: relative;
