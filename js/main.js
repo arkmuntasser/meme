@@ -29,7 +29,6 @@ $(document).ready(function() {
     $(this).parent().find('.mobile-download-area-img img').remove();
   });
 
-
   $(document).click(function(e) {
     if($("body").hasClass("open")) {
       if(!$(e.target).is(".mobile-download-area")) {
