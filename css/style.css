@@ -82,11 +82,8 @@ small > * { font-size: inherit; }
           transition: opacity .4s ease;
 }
 body.open .mobile-download-area  {
-  box-shadow: 0 -2px 20px rgba(0,0,0,.4);
-  -webkit-transform: translate(0,-100%);
-					transform: translate(0,-100%);
-	-webkit-transform: translate3d(0,-100%,0);
-					transform: translate3d(0,-100%,0);
+  z-index: 1000;
+  opacity: 1;
 }
 
 @media (max-width: 640px) {
