@@ -70,6 +70,7 @@
   background-image: url("../assets/icon-200.png");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: 35%;
 	box-shadow: 0 0 20px rgba(0,0,0,.4);
 }
 @media (max-width: 640px) and (orientation: portrait) {
