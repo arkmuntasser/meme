@@ -62,6 +62,13 @@ $(document).ready(function() {
     }
   });
 
+  $('.content-editor-label').click(function() {
+    if(window.innerWidth <= 640) {
+      var id = "#" + $(this).attr("id");
+      $('.icon a[href="' + id + '"]').click();
+    }
+  });
+
   $('.icon-info').click(function() {
     $(this).next().toggleClass("active");
   });
