@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('.input-text').val($('.input-text').val());
+  $('textarea[name=text]').keyup();
 
   $(function() {
     FastClick.attach(document.body);
