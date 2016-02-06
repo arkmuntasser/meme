@@ -3,6 +3,10 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+  font-family:
+    /* 1 */ -apple-system, BlinkMacSystemFont,
+    /* 2 */ "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    /* 3 */ "Helvetica Neue", Helvetica, arial, sans-serif;
 	font-size: 16px;
 	line-height: 24px;
 	color: #fff;
