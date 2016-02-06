@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $('.input-text').val($('.input-text').val());
+
   $(function() {
     FastClick.attach(document.body);
   });
