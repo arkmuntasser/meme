@@ -91,4 +91,6 @@ $(document).ready(function() {
 
   document.getElementsByClassName("button-download")[0].addEventListener('click', dlCanvas, false);
   document.getElementsByClassName("button-download")[1].addEventListener('click', dlCanvas, false);
+
+  $('textarea[name=text]').keyup();
 });
