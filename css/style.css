@@ -61,10 +61,10 @@ small > * { font-size: inherit; }
 .mobile-download-area  {
 	position: fixed;
 	z-index: 1000;
-  bottom: -70vh;
+  bottom: -60vh;
 	padding: .9375rem;
 	width: 100vw;
-	height: 70vh;
+	height: 60vh;
   font-size: 16px;
   font-weight: 700;
 	color: #333;
@@ -105,8 +105,8 @@ body.open .mobile-download-area  {
 body.open .container {
   -webkit-transform: scale(.9);
           transform: scale(.9);
-  -webkit-transform: scale3d(.9);
-          transform: scale3d(.9);
+  -webkit-transform: scale3d(.9,.9,.9);
+          transform: scale3d(.9,.9,.9);
 }
 
 .column { float: left; }
