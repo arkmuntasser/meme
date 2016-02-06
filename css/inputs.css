@@ -266,9 +266,7 @@
 .sidebar .radio-pink { background-color: #ff0080; }
 .sidebar .radio-black { background-color: #000000; }
 
-.sidebar .download-wrapper {
-  padding: 0 .9375rem;
-}
+.sidebar .download-wrapper { padding: 0 .9375rem; }
 
 .sidebar .button-download {
 	display: none;
@@ -291,17 +289,11 @@
   color: #555;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
-@media (max-width: 1200px) {
-	.sidebar .button-download {
-		width: 40%;
-		width: 200px;
-	}
-}
+
 @media (max-width: 767px) {
 	.sidebar .button-download {
 		float: none;
 		margin: 0;
-		width: 100%;
 	}
 }
 .no-touchevents .sidebar .button-download-notouch { display: block; }
