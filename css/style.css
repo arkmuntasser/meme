@@ -80,6 +80,23 @@ body.open .mobile-download-area  {
 	-webkit-transform: translate3d(0,-100%,0);
 					transform: translate3d(0,-100%,0);
 }
+@media (max-width: 767px) {
+  .mobile-download-area  {
+    bottom: -90vh;
+    left: 25vw;
+  	width: 50vw;
+    height: 90vh;
+    border-radius: 4px;
+  }
+
+  body.open .mobile-download-area  {
+    -webkit-transform: translate(0,-105%);
+  					transform: translate(0,-105%);
+  	-webkit-transform: translate3d(0,-105%,0);
+  					transform: translate3d(0,-105%,0);
+  }
+}
+
 .mobile-download-area .close {
 	float: right;
 	width: 32px;
