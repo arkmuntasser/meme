@@ -71,7 +71,7 @@ $(document).ready(function() {
   });
 
   // downloader
-  function dlCanvas() {
+  function dlCanvas(e) {
       var dt = c.getDataUrl();
 
       if($("html").hasClass("no-touchevents")) {
@@ -82,8 +82,9 @@ $(document).ready(function() {
         this.download = this.download + "-" + d.getTime() + ".png";
         this.href = dt;
       } else {
+        e.stopPropagation();
         $(".mobile-download-area-img").append('<img src="' + dt + '"/>');
-        $(".mobile-download-area").toggleClass("open");
+        $("body").toggleClass("open");
       }
   };
 

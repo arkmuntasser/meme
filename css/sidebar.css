@@ -139,6 +139,9 @@
 		cursor: pointer;
 	}
 }
+@media (max-width: 640px) and (orientation: portrait) {
+	.sidebar .open-close-toggle { display: none; }
+}
 
 .sidebar header,
 .sidebar footer { padding: .46875rem .9375rem; }

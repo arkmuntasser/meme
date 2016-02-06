@@ -25,8 +25,20 @@ $(document).ready(function() {
   }
 
   $('.close').click(function() {
-    $(this).parent().toggleClass("open");
+    $("body").toggleClass("open");
     $(this).parent().find('.mobile-download-area-img img').remove();
+  });
+
+
+  $(document).click(function(e) {
+    if($("body").hasClass("open")) {
+      if(!$(e.target).is(".mobile-download-area")) {
+        if($(e.target).closest(".mobile-download-area").length < 1) {
+          $("body").removeClass("open");
+          $(this).parent().find('.mobile-download-area-img img').remove();
+        }
+      }
+    }
   });
 
   $('.open-close-toggle').click(function() {
