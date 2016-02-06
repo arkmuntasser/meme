@@ -83,7 +83,8 @@ $(document).ready(function() {
         this.href = dt;
       } else {
         e.stopPropagation();
-        $(".mobile-download-area-img").append('<img src="' + dt + '"/>');
+        var ratio = $("canvas").hasClass("wide") ? "wide" : "square";
+        $(".mobile-download-area-img").append('<img class="' + ratio + '" src="' + dt + '"/>');
         $("body").toggleClass("open");
       }
   };

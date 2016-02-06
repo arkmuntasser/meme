@@ -22,7 +22,7 @@ body:after {
   top: -100%;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,.6);
+  background-color: rgba(0,0,0,.5);
   opacity: 0;
   -webkit-transition: opacity .4s ease;
           transition: opacity .4s ease;
@@ -94,6 +94,11 @@ body.open .mobile-download-area  {
   width: 100%;
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0,0,0,.3);
+}
+.mobile-download-area .mobile-download-area-img img.square {
+  margin: 0 auto;
+  display: block;
+  width: 80%;
 }
 
 .container {
