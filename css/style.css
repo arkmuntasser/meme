@@ -80,7 +80,7 @@ body.open .mobile-download-area  {
 	-webkit-transform: translate3d(0,-100%,0);
 					transform: translate3d(0,-100%,0);
 }
-@media (max-width: 767px) {
+@media (max-width: 767px) and (orientation: landscape) {
   .mobile-download-area  {
     bottom: -90vh;
     left: 25vw;
