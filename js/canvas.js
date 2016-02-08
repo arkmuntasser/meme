@@ -49,7 +49,7 @@ var Canvas = function(overwrite) {
     order : ['background', 'overlay', 'text', 'logo'],
     overlayColor : 'transparent',
     position : 'top',
-    font : "bold 52px Arial",
+    font : "normal 52px Arial",
     text : 'Hello, world!',
     textAlign : 'left',
     width : 1024
@@ -78,7 +78,7 @@ Canvas.prototype._clearCanvas = function(startingCmdId) {
     this.ctxArray[i].globalAlpha = 1;
     this.ctxArray[i].clearRect(0, 0, self.settings.width, self.settings.height);
     this.ctxArray[i].fillStyle = '#ffffff';
-    this.ctxArray[i].font = '' + self.settings.font + ', sans-serif';
+    this.ctxArray[i].font = self.settings.font;
   }
 
   this._wrapText(35, 82, 974, 58);
@@ -154,7 +154,7 @@ Canvas.prototype._drawText = function() {
   var text = this.settings.text;
 
   this.textCtx.fillStyle = '#ffffff';
-  this.textCtx.font = '' + this.settings.font;
+  this.textCtx.font = this.settings.font;
   this._wrapText(35, 82, this.settings.width - 50, 58);
 };
 
@@ -209,7 +209,7 @@ Canvas.prototype._drawImageProp = function(img, x, y, w, h, offsetX, offsetY) {
 
 Canvas.prototype._wrapText = function(x, y, maxWidth, lineHeight) {
   var self = this;
-  var words = this.settings.text.toUpperCase().split(' ');
+  var words = this.settings.text.split(' ');
   var line = '';
 
   if(this.settings.textAlign == 'right') {
