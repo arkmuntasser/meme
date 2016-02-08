@@ -49,6 +49,7 @@ var Canvas = function(overwrite) {
     order : ['background', 'overlay', 'text', 'logo'],
     overlayColor : 'transparent',
     position : 'top',
+    font : "bold 52px Arial",
     text : 'Hello, world!',
     textAlign : 'left',
     width : 1024
@@ -77,7 +78,7 @@ Canvas.prototype._clearCanvas = function(startingCmdId) {
     this.ctxArray[i].globalAlpha = 1;
     this.ctxArray[i].clearRect(0, 0, self.settings.width, self.settings.height);
     this.ctxArray[i].fillStyle = '#ffffff';
-    this.ctxArray[i].font = 'bold 52px Helvetica Neue, Helvetica, Arial, sans-serif';
+    this.ctxArray[i].font = '' + self.settings.font + ', sans-serif';
   }
 
   this._wrapText(35, 82, 974, 58);
@@ -153,6 +154,7 @@ Canvas.prototype._drawText = function() {
   var text = this.settings.text;
 
   this.textCtx.fillStyle = '#ffffff';
+  this.textCtx.font = '' + this.settings.font;
   this._wrapText(35, 82, this.settings.width - 50, 58);
 };
 
@@ -247,7 +249,7 @@ Canvas.prototype.getDataUrl = function() {
   return this.bufferCanvas.toDataURL('image/png');
 };
 
-Canvas.prototype.changRatio = function(ratio) {
+Canvas.prototype.changeRatio = function(ratio) {
   this.settings.width = 1024;
   this.settings.height = 512;
 
@@ -265,7 +267,13 @@ Canvas.prototype.changRatio = function(ratio) {
 };
 
 // Text
-Canvas.prototype.changText = function(text) {
+Canvas.prototype.changeFont = function(font) {
+  this.settings.font = font;
+
+  this._updateCanvas(this.textCmdId);
+};
+
+Canvas.prototype.changeText = function(text) {
   this.settings.text = text;
 
   this._updateCanvas(this.textCmdId);
@@ -284,13 +292,13 @@ Canvas.prototype.changeTextPosition = function(position) {
 };
 
 // Images
-Canvas.prototype.changBackgroundImage = function(imgstr) {
+Canvas.prototype.changeBackgroundImage = function(imgstr) {
   this.settings.backgroundImage = imgstr;
 
   this._updateCanvas(this.backgroundCmdId);
 };
 
-Canvas.prototype.changLogoImage = function(imgstr) {
+Canvas.prototype.changeLogoImage = function(imgstr) {
   this.settings.logoImage = imgstr;
 
   this._updateCanvas(this.logoCmdId);
@@ -303,7 +311,7 @@ Canvas.prototype.changeOverlayOpacity = function(opacity) {
   this._updateCanvas(this.overlayCmdId);
 };
 
-Canvas.prototype.changOverlayColor = function(color) {
+Canvas.prototype.changeOverlayColor = function(color) {
   this.settings.overlayColor = color;
 
   this._updateCanvas(this.overlayCmdId);

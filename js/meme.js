@@ -8,9 +8,9 @@ $(document).ready(function() {
 
       reader.onload = function(e) {
           if (option == "img") {
-              c.changBackgroundImage(e.target.result);
+              c.changeBackgroundImage(e.target.result);
           } else if (option == "logo") {
-              c.changLogoImage(e.target.result);
+              c.changeLogoImage(e.target.result);
           }
       }
       reader.readAsDataURL(input.files[0]);
@@ -35,7 +35,14 @@ $(document).ready(function() {
     var ratio = $(this).val();
 
     $(".canvas").toggleClass("wide");
-    c.changRatio(ratio);
+    c.changeRatio(ratio);
+  });
+
+  // ratio input
+  $('select[name=font]').change(function() {
+    var font = $(this).val();
+
+    c.changeFont(font);
   });
 
   // text inputs
@@ -54,7 +61,7 @@ $(document).ready(function() {
   $('textarea[name=text]').keyup(function() {
     var text = $(this).val();
 
-    c.changText(text);
+    c.changeText(text);
   });
 
   // overlay inputs
@@ -67,7 +74,7 @@ $(document).ready(function() {
   $('input[name=overlay]').change(function() {
     var color = $('input[name=overlay]:checked').val();
 
-    c.changOverlayColor(color);
+    c.changeOverlayColor(color);
   });
 
   // downloader

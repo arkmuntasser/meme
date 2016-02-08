@@ -20,13 +20,15 @@
 }
 
 .sidebar .select-ratio,
+.sidebar .select-font,
 .sidebar .input-range {
 	margin-top: 10px;
 	width: 100%;
   background-color: transparent;
 }
 
-.sidebar .select-ratio {
+.sidebar .select-ratio,
+.sidebar .select-font {
   position: relative;
   padding: 0 .9375rem;
   height: 35px;
